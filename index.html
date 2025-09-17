@@ -129,6 +129,7 @@
     </symbol>
   </svg>
 
+  <!-- NAVBAR -->
   <header id="header">
     <nav class="header-top py-4">
       <div class="container">
@@ -201,6 +202,7 @@
     </nav>
   </header>
 
+  <!-- BANNER -->
   <section id="intro" class="position-relative overflow-hidden">
     <div class="banner">
       <img src="./asserts/images/banner.jpg" alt="banner" class="img-fluid">
@@ -209,27 +211,82 @@
 
       <div class="container">
         <div class="banner-content position-absolute padding-large text-white">
-          <h6 class="fw-bold text-uppercase">About Us</h6>
           <h1 class="display-3 fw-bold">Innovating Biologics & Biosimilars for a Healthier World</h1>
           <p class="mt-4 mb-4 text-white">At ABS Novacell Biopharmaceuticals, we are committed to delivering quality, affordable, and innovative biologics, vaccines, and biosimilars to address unmet medical needs for humans and animals worldwide.</p>
-          <a href="./contact-us.html" class="btn btn-small btn-primary btn-pill text-uppercase fw-bold">Contact us</a>
-          <a href="./contact-us.html" class="btn btn-small btn-primary btn-pill text-uppercase fw-bold">Contact us</a>
-          <a href="./contact-us.html" class="btn btn-small btn-primary btn-pill text-uppercase fw-bold">Contact us</a>
+          <div class="d-flex flex-wrap justify-content-center gap-3 mt-4 padding-small">
+            <a href="./about-us.html" class="btn btn-medium btn-banner btn-pill text-uppercase fw-bold">Our Mission</a>
+            <a href="./Products-services.html" class="btn btn-medium btn-banner btn-pill text-uppercase fw-bold">Products</a>
+            <a href="./investments.html" class="btn btn-medium btn-banner btn-pill text-uppercase fw-bold">Investments</a>
+          </div>
+
         </div>
       </div>
     </div>
   </section>
 
-  <section id="our-services" class="padding-medium" style="background-image: url(./asserts/images/Products.jpg); background-repeat: no-repeat; background-position: center top;">
+  <!-- MISSION & VISION -->
+  <section id="about-salon" class="padding-medium text-light">
     <div class="container">
-      <div class="row">
-        <!-- Heading -->
-        <div class="col-12 text-center padding-medium">
-          <h2 class="text-light display-4 fw-bold">Our Products</h2>
+      <div class="row align-items-center">
+        
+        <!-- Left Side Content -->
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <h2 class="display-5 fw-bold text-dark gap-5">About Us</h2>
+          <p class="fw-semibold">
+            ABS Novacell is a Biopharmaceutical & Biotechnology company with core product development competencies in the following areas :
+          </p>
+          <p class="mt-3">
+            Novel Vaccines (Viral, Bacterial)-in pipeline
+          </p>
+          <p class="mt-3">
+            Innovative Bio therapeutics & Biosimilars /Biologics-done research based development on
+            biosimilars.,where USA team have developed Insulin along with analogs with substantial yield
+            improvements cost effectively with cGMP US-FDA standards.
+          </p>
+          <a href="./about-us.html" class="btn btn-medium btn-primary btn-pill">Know More</a>
+        </div>
+
+        <!-- Right Side Testimonials -->
+        <div class="col-lg-6">
+          <div class="row g-3">
+            <div class="col-12">
+              <div class="p-4 bg-primary border-radius-20">
+                <h6 class="fw-bold mt-2 text-primary">OUR MISSION</h6>
+                <p>
+                  Our mission is to become a leading global biopharma company by delivering quality, affordable biologics and biosimilars to alleviate human and animal suffering.
+                </p>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="p-4 bg-primary border-radius-20">
+                <h6 class="fw-bold mt-2">OUR VISION</h6>
+                <p>
+                  Our vision is to build an innovative biopharmaceutical business in India, leveraging global expertise and novel biologics to emerge as unmatched leaders worldwide. 
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
+  </section>
 
+  <!-- PRODUCTS -->
+  <section id="our-services" class="position-relative">
+    <!-- Background Image -->
+    <div class="hero-image" 
+        style="background: url(https://www.shutterstock.com/image-photo/scientist-holding-medical-testing-tubes-260nw-2506585825.jpg) no-repeat center top / cover; 
+                height: 400px; 
+                position: relative;">
+      <div class="container h-30 d-flex justify-content-center align-items-center padding-medium">
+        <h2 class="text-white display-4 fw-bold">Our Products</h2>
+      </div>
+    </div>
+
+    <!-- Cards Section -->
+    <div class="container position-relative" style="margin-top: -150px; z-index: 2;">
       <div class="row justify-content-center">
+        
         <!-- Card 1 -->
         <div class="col-lg-4 col-md-6 pb-3">
           <div class="icon-box p-4 bg-light border-radius-10 text-center shadow-sm">
@@ -274,8 +331,13 @@
             </div>
           </div>
         </div>
+
       </div>
-      <a href="./Products-services.html" class="btn btn-medium btn-primary btn-pill mt-4">Know More</a>
+
+      <!-- Button -->
+      <div class="text-center mt-4 padding-small">
+        <a href="./Products-services.html" class="btn btn-medium btn-primary btn-pill">Know More</a>
+      </div>
     </div>
   </section>
 
@@ -362,46 +424,24 @@
               <div class="swiper-slide">
                 <div class="team-member d-flex align-items-center">
                   <div class="col-md-6">
-                    <div class="image-holder me-4 mb-4">
-                      <img src="images/team-item.jpg" alt="team member" class="border-radius-10 img-fluid">
+                    <div class="member-info">
+                      <h3 class="fs-4 fw-bold text-dark">Dr. Leslie Taylor</h3>
+                      <span class="text-uppercase fs-6 text-cadet-blue pb-2 d-block">Pediatrician</span>
+                      <p>Dolor sit amet, consectetur adipiscing elit. Dignissim massa diam elementum habitant fames ac
+                        penatibus et.</p>
                     </div>
                   </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="team-member d-flex align-items-center">
                   <div class="col-md-6">
                     <div class="member-info">
                       <h3 class="fs-4 fw-bold text-dark">Dr. Leslie Taylor</h3>
                       <span class="text-uppercase fs-6 text-cadet-blue pb-2 d-block">Pediatrician</span>
                       <p>Dolor sit amet, consectetur adipiscing elit. Dignissim massa diam elementum habitant fames ac
                         penatibus et.</p>
-                      <ul class="social-links list-unstyled d-flex">
-                        <li>
-                          <a href="#">
-                            <svg class="facebook text-primary-500 me-4" width="30" height="30">
-                              <use xlink:href="#facebook" />
-                            </svg>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <svg class="twitter text-primary-500 me-4" width="30" height="30">
-                              <use xlink:href="#twitter" />
-                            </svg>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <svg class="instagram text-primary-500 me-4" width="30" height="30">
-                              <use xlink:href="#instagram" />
-                            </svg>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <svg class="youtube text-primary-500" width="30" height="30">
-                              <use xlink:href="#youtube" />
-                            </svg>
-                          </a>
-                        </li>
-                      </ul>
                     </div>
                   </div>
                 </div>
@@ -410,46 +450,11 @@
               <div class="swiper-slide">
                 <div class="team-member d-flex align-items-center">
                   <div class="col-md-6">
-                    <div class="image-holder me-4 mb-4">
-                      <img src="images/team-item1.jpg" alt="team member" class="border-radius-10 img-fluid">
-                    </div>
-                  </div>
-                  <div class="col-md-6">
                     <div class="member-info">
-                      <h3 class="fs-4 fw-bold text-dark">Dr. Zachary Brown</h3>
-                      <span class="text-uppercase fs-6 text-cadet-blue pb-2 d-block">Cardiologist</span>
+                      <h3 class="fs-4 fw-bold text-dark">Dr. Leslie Taylor</h3>
+                      <span class="text-uppercase fs-6 text-cadet-blue pb-2 d-block">Pediatrician</span>
                       <p>Dolor sit amet, consectetur adipiscing elit. Dignissim massa diam elementum habitant fames ac
                         penatibus et.</p>
-                      <ul class="social-links list-unstyled d-flex">
-                        <li>
-                          <a href="#">
-                            <svg class="facebook text-primary-500 me-4" width="30" height="30">
-                              <use xlink:href="#facebook" />
-                            </svg>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <svg class="twitter text-primary-500 me-4" width="30" height="30">
-                              <use xlink:href="#twitter" />
-                            </svg>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <svg class="instagram text-primary-500 me-4" width="30" height="30">
-                              <use xlink:href="#instagram" />
-                            </svg>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <svg class="youtube text-primary-500" width="30" height="30">
-                              <use xlink:href="#youtube" />
-                            </svg>
-                          </a>
-                        </li>
-                      </ul>
                     </div>
                   </div>
                 </div>
@@ -458,46 +463,24 @@
               <div class="swiper-slide">
                 <div class="team-member d-flex align-items-center">
                   <div class="col-md-6">
-                    <div class="image-holder me-4 mb-4">
-                      <img src="images/team-item2.jpg" alt="team member" class="border-radius-10 img-fluid">
-                    </div>
-                  </div>
-                  <div class="col-md-6">
                     <div class="member-info">
-                      <h3 class="fs-4 fw-bold text-dark">Dr. Isabella Davies</h3>
-                      <span class="text-uppercase fs-6 text-cadet-blue pb-2 d-block">Gynecologist</span>
+                      <h3 class="fs-4 fw-bold text-dark">Dr. Leslie Taylor</h3>
+                      <span class="text-uppercase fs-6 text-cadet-blue pb-2 d-block">Pediatrician</span>
                       <p>Dolor sit amet, consectetur adipiscing elit. Dignissim massa diam elementum habitant fames ac
                         penatibus et.</p>
-                      <ul class="social-links list-unstyled d-flex">
-                        <li>
-                          <a href="#">
-                            <svg class="facebook text-primary-500 me-4" width="30" height="30">
-                              <use xlink:href="#facebook" />
-                            </svg>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <svg class="twitter text-primary-500 me-4" width="30" height="30">
-                              <use xlink:href="#twitter" />
-                            </svg>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <svg class="instagram text-primary-500 me-4" width="30" height="30">
-                              <use xlink:href="#instagram" />
-                            </svg>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <svg class="youtube text-primary-500" width="30" height="30">
-                              <use xlink:href="#youtube" />
-                            </svg>
-                          </a>
-                        </li>
-                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="team-member d-flex align-items-center">
+                  <div class="col-md-6">
+                    <div class="member-info">
+                      <h3 class="fs-4 fw-bold text-dark">Dr. Leslie Taylor</h3>
+                      <span class="text-uppercase fs-6 text-cadet-blue pb-2 d-block">Pediatrician</span>
+                      <p>Dolor sit amet, consectetur adipiscing elit. Dignissim massa diam elementum habitant fames ac
+                        penatibus et.</p>
                     </div>
                   </div>
                 </div>
@@ -703,6 +686,7 @@
     </div>
   </section>
 
+  <!-- BLOGS -->
   <section id="latest-blog" class="padding-large">
     <div class="container">
       <div class="row">
@@ -772,23 +756,25 @@
           </div>
         </div>
       </div>
-      <a href="./blogs.html" class="btn btn-medium btn-primary btn-pill text-uppercase text-center mx-auto">Read more
-        blogs</a>
+      <div class="text-center mt-4">
+        <a href="./blogs.html" class="btn btn-medium btn-primary btn-pill">Know More</a>
+      </div>
     </div>
   </section>
 
-  <section id="about-us" class="padding-large pt-0">
+  <!-- COUNTING -->
+  <section id="about-us" class="bg-primary pt-0">
     <div class="container">
-      <div class="row">
+      <div class="row padding-medium">
 
         <div class="col-lg-3 col-md-6 col-sm-6">
           <div class="counter-info text-center">
             <div
               class="counter-number text-primary-500 display-2 fw-semibold d-flex align-items-center justify-content-center">
+              <h5 class="timer display-4 fw-bold m-0" data-to="5120" data-speed="8000">25</h5>
               <span class="counter-prefix">+</span>
-              <h5 class="timer display-4 fw-bold m-0" data-to="5120" data-speed="8000">5120</h5>
             </div>
-            <p class="counter-description">Happy Patients</p>
+            <p class="counter-description">Years of Innovation</p>
           </div>
         </div>
 
@@ -796,10 +782,10 @@
           <div class="counter-info text-center">
             <div
               class="counter-number text-primary-500 display-2 fw-semibold d-flex align-items-center justify-content-center">
+              <h5 class="timer display-4 fw-bold m-0" data-to="5120" data-speed="8000">5</h5>
               <span class="counter-prefix">+</span>
-              <h5 class="timer display-4 fw-bold m-0" data-to="5120" data-speed="8000">26</h5>
             </div>
-            <p class="counter-description">Total Branches</p>
+            <p class="counter-description">Global Laboratories</p>
           </div>
         </div>
 
@@ -807,10 +793,10 @@
           <div class="counter-info text-center">
             <div
               class="counter-number text-primary-500 display-2 fw-semibold d-flex align-items-center justify-content-center">
+              <h5 class="timer display-4 fw-bold m-0" data-to="5120" data-speed="8000">15</h5>
               <span class="counter-prefix">+</span>
-              <h5 class="timer display-4 fw-bold m-0" data-to="5120" data-speed="8000">53</h5>
             </div>
-            <p class="counter-description">Senior Doctors</p>
+            <p class="counter-description">Patents Filed</p>
           </div>
         </div>
 
@@ -818,10 +804,10 @@
           <div class="counter-info text-center">
             <div
               class="counter-number text-primary-500 display-2 fw-semibold d-flex align-items-center justify-content-center">
+              <h5 class="timer display-4 fw-bold m-0" data-to="5120" data-speed="8000">4</h5>
               <span class="counter-prefix">+</span>
-              <h5 class="timer display-4 fw-bold m-0" data-to="5120" data-speed="8000">10</h5>
             </div>
-            <p class="counter-description">Years Experience</p>
+            <p class="counter-description">Global Offices</p>
           </div>
         </div>
 
@@ -829,57 +815,14 @@
     </div>
   </section>
 
-  <section id="subscribe" class="d-flex align-items-center"
-    style="background-image: url(images/subscribe-bg.jpg); background-repeat: no-repeat;background-size: cover; height: 444px;">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="subscribe-content">
-          <div class="row align-items-center">
-            <div class="col-lg-6 col-md-12 col-sm-12">
-              <div class="subscribe-header content-light mb-5">
-                <span class="text-light text-uppercase">Our newsletter</span>
-                <h3 class="display-3 fw-semibold text-light mt-3">Subscribe Us To Get More Updates</h3>
-              </div>
-            </div>
-            <div class="col-lg-6 col-md-12 col-sm-12">
-              <form id="form" class="d-flex flex-wrap position-relative">
-                <input type="text" name="email" placeholder="Your Email Addresss"
-                  class="border-radius-35 text-light ps-4 outline-transparent">
-                <button
-                  class="btn btn-light btn-subscribe btn-pill position-absolute fw-medium text-uppercase">Subscribe</button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
+  <!-- CONTACT FORM -->
   <section id="book-appointment" class="padding-large mb-0">
     <div class="container">
       <div class="display-header">
-        <h2 class="display-5 fw-bold text-dark">Contact Us: <span class="text-primary-500">(+487) 384
-            9452</span></h2>
+        <h2 class="display-5 fw-bold text-dark">Contact Us: <span class="text-primary-500">
+            </span></h2>
       </div>
       <form class="contact-form d-flex flex-wrap mt-5 gx-1">
-        <!-- <div class="col-lg-6 col-md-12 col-sm-12 mb-3">
-          <select class="form-select focus-transparent border border-radius-10 ps-4" aria-invalid="false" name="choose">
-            <option value="Select Your Department">Select Department </option>
-            <option value="Department">Department of Physiotherapy</option>
-            <option value="Department">Department of Dentistry</option>
-            <option value="Department">ENT Department</option>
-            <option value="Department">Department of Pharmacy</option>
-            <option value="Department">Nursing Department</option>
-          </select>
-        </div> -->
-        <!-- <div class="col-lg-6 col-md-12 col-sm-12 mb-3">
-          <select class="form-select focus-transparent border ps-4 border-radius-10" aria-invalid="false" name="choose">
-            <option value="Select Your Doctor">Select Doctor</option>
-            <option value="Naidan Smith">William Davies</option>
-            <option value="Danial Frankie">Charlotte Taylor</option>
-            <option value="Jason Roy">William Jones</option>
-          </select>
-        </div> -->
         <div class="col-lg-6 col-md-12 col-sm-12 mb-3">
           <input type="text" name="name" placeholder="Full Name" class="border ps-4 border-radius-10" required>
         </div>
@@ -895,23 +838,12 @@
                 placeholder="Tell us about your inquiry..." required></textarea>
           <div class="error-message"></div>
         </div>
-        <!-- <div class="col-lg-6 col-md-12 col-sm-12 mb-3">
-          <div class="input-group date" id="datepicker">
-            <input type="date" id="start" name="appointment" min="2018-01-01" max="2018-12-31" placeholder="Choose Date"
-              class="bg-transparent ps-4 border border-radius-10 position-relative">
-          </div>
-        </div> -->
-        <!-- <div class="col-lg-6 col-md-12 col-sm-12 mb-3">
-          <div class="input-group time" id="timepicker">
-            <input type="time" id="start" name="appointment" min="9AM" max="6PM"
-              class="bg-transparent ps-4 border border-radius-10 position-relative">
-          </div>
-        </div> -->
       </form>
       <a href="#" class="btn btn-medium btn-primary btn-pill mt-3 text-uppercase">Submit</a>
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer id="footer" class="overflow-hidden bg-primary padding-medium pb-0">
     <div class="container justify-content-between">
       <div class="row gy-4"> <!-- gy-4 = vertical spacing for mobile -->
@@ -989,7 +921,6 @@
   </footer>
 
   <script src="js/jquery-1.11.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
   <script type="text/javascript" src="js/plugins.js"></script>
   <script type="text/javascript" src="js/script.js"></script>

@@ -65,6 +65,7 @@ CSS STRUCTURE:
   --black-color: #000;
   --dark-color: #4C5354;
   --primary-color: #213F61;
+  --secondary-color : #e70a27;
   --primary-color-200: #e8f1ec;
   --primary-color-400: #e8f1ed;
   --gray-color: #777F81;
@@ -73,8 +74,8 @@ CSS STRUCTURE:
   --bs-primary-rgb: rgb(33, 63, 97);
   --light-color: #fff;
   --swiper-theme-color: #111 !important;
-  --cadet-blue-color: #4278b6;
-
+  --cadet-blue-color: #2f5e92;
+  --cadet-gray-color: #bac2c4;
 }
 
 /* on mobile devices below 600px
@@ -166,8 +167,12 @@ strong {
   color: var(--light-color) !important;
 }
 
+.text-primary-blue{
+  color: var(--cadet-blue-color) ;
+}
+
 .text-primary-500 {
-  color: var(--cadet-blue-color) !important;
+  color: var(--cadet-gray-color) !important;
 }
 
 .text-primary-500:hover {
@@ -344,7 +349,7 @@ h5.light {
 }
 
 .btn.btn-medium {
-  padding: 1.1em 2.3em;
+  padding: 0.7em 1em;
   font-size: 1em;
 }
 
@@ -485,6 +490,18 @@ h5.light {
   background-color: var(--primary-color-400);
   color: var(--primary-color);
 }
+
+.btn.btn-banner {
+  background-color: var(--light-color);
+  color: var(--primary-color);
+  border: none;
+}
+
+.btn.btn-banner:hover {
+  background-color: var(--primary-color);
+  color: var(--primary-color-400);
+}
+
 
 /* - Buttons Aligns
 ------------------------------------------------------------- */
