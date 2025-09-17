@@ -28,7 +28,8 @@
 </head>
 
 <body data-bs-spy="scroll" data-bs-target="#header-nav" tabindex="0">
-    
+   
+  <!-- NAVBAR -->
   <header id="header">
     <nav class="header-top py-4">
       <div class="container">
@@ -87,6 +88,7 @@
     </nav>
   </header>
 
+  <!-- BANNER -->
   <section id="intro" style="background-color:#e8f1ed;">
     <div class="container">
       <div class="banner-content padding-large">
@@ -97,6 +99,7 @@
     </div>
   </section>
 
+  <!-- CONTACT FORM -->
   <section class="contact-us-wrap py-5 mt-5">
     <div class="container">
       <div class="row">
@@ -205,6 +208,7 @@
     </div>
   </section>
 
+  <!-- ADDRESS -->
   <section class="contact-list pb-5 mb-5">
     <div class="container">
       <div class="row">
@@ -269,139 +273,82 @@
     </div>
   </section>
 
-  <footer id="footer" class="overflow-hidden padding-large pb-0">
-    <div class="container">
-      <div class="row d-flex flex-wrap justify-content-between">
-        <div class="col-lg-4 col-md-6 col-sm-6 pb-3">
+  <!-- FOOTER -->
+  <footer id="footer" class="overflow-hidden bg-primary padding-medium pb-0">
+    <div class="container justify-content-between">
+      <div class="row gy-4"> <!-- gy-4 = vertical spacing for mobile -->
+        
+        <!-- Left Side -->
+        <div class="col-lg-6 col-md-6 pe-lg-1">
           <div class="footer-menu">
-            <h1>BIO NOVACELL</h1>
-            <p>Elit adipi massa diam in dignissim. Sagittis pulvinar ut dis venenatis nunc nunc.</p>
-            <div class="contact-item">
-              <p>
-                <svg class="location primary-color" width="25" height="25">
-                  <use xlink:href="#location"></use>
-                </svg>
-                <span>123 Arling, Miola, NY</span>
-              </p>
-              <p>
-                <svg class="email primary-color" width="25" height="25">
-                  <use xlink:href="#email"></use>
-                </svg>
-                <a href="mailto:">Info@yourinfo.com</a>
-              </p>
-              <p>
-                <svg class="phone primary-color" width="25" height="25">
-                  <use xlink:href="#phone"></use>
-                </svg>
-                <span>(+487) 384 9452</span>
-              </p>
-              <ul class="social-links list-unstyled d-flex mt-3">
-                <li>
-                  <a href="#">
-                    <svg class="facebook text-primary-500 me-3" width="25" height="25">
-                      <use xlink:href="#facebook"></use>
-                    </svg>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <svg class="twitter text-primary-500 me-3" width="25" height="25">
-                      <use xlink:href="#twitter"></use>
-                    </svg>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <svg class="instagram text-primary-500 me-3" width="25" height="25">
-                      <use xlink:href="#instagram"></use>
-                    </svg>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <svg class="youtube text-primary-500 me-3" width="25" height="25">
-                      <use xlink:href="#youtube"></use>
-                    </svg>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <svg class="linkedin text-primary-500" width="25" height="25">
-                      <use xlink:href="#linkedin"></use>
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-
+            <h1 class="fw-bold text-primary">BIO NOVACELL</h1>
+            <p class="text-para">© ABS Novacell Biopharmaceuticals Limited. Advancing compassionate innovation for a healthier tomorrow.</p>
+            
+            <div class="contact-item text-primary">
+              <div class="d-flex align-items-start mb-2">
+                <svg class="me-2 text-primary" width="20" height="20"><use xlink:href="#location"></use></svg>
+                <span>B-502, Leela Nagar, Ameerpet, Hyderabad -16, AP India</span>
+              </div>
+              <div class="d-flex align-items-start mb-2">
+                <svg class="me-2 text-primary" width="20" height="20"><use xlink:href="#location"></use></svg>
+                <span>80 Main Street, 5th Floor, West Orange, NJ 07052, USA</span>
+              </div>
+              <div class="d-flex align-items-start mb-2">
+                <svg class="me-2 text-primary" width="20" height="20"><use xlink:href="#email"></use></svg>
+                <div>
+                  <a href="mailto:dr.niranjan@absnovacell.com" class="d-block text-primary-500">dr.niranjan@absnovacell.com</a>
+                  <a href="mailto:nkumar.wharton@gmail.com" class="d-block text-primary-500">nkumar.wharton@gmail.com</a>
+                </div>
+              </div>
+              <div class="d-flex align-items-start">
+                <svg class="me-2 text-primary" width="20" height="20"><use xlink:href="#phone"></use></svg>
+                <span>Fax: 610-365-8795 | Tel: 610-905-8609</span>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6 col-sm-6 pb-3">
+
+        <!-- Right Side -->
+        <div class="col-lg-6 col-md-6 pe-lg-5">
           <div class="footer-menu">
-            <h5 class="widget-title pb-2 fw-semibold">Quick Links</h5>
-            <ul class="menu-list list-unstyled">
-              <li class="pb-2">
-                <a href="#intro">Home</a>
-              </li>
-              <li class="pb-2">
-                <a href="#about-us">About</a>
-              </li>
-              <li class="pb-2">
-                <a href="#our-services">Services</a>
-              </li>
-              <li class="pb-2">
-                <a href="#book-appointment">Booking</a>
-              </li>
-              <li class="pb-2">
-                <a href="#testimonial">Testimonial</a>
-              </li>
-              <li class="pb-2">
-                <a href="#our-team">Our Team</a>
-              </li>
-              <li class="pb-2">
-                <a href="#faqs">Faqs</a>
-              </li>
-              <li class="pb-2">
-                <a href="#department">Department</a>
-              </li>
-              <li class="pb-2">
-                <a href="#latest-blog">Blog</a>
-              </li>
-            </ul>
+            <h5 class="fw-semibold text-primary pb-2">Quick Links</h5>
+            <div class="row">
+              <div class="col-5">
+                <ul class="list-unstyled">
+                  <li><a href="./index.html" class="text-primary-500">Home</a></li>
+                  <li><a href="./about-us.html" class="text-primary-500">About Us</a></li>
+                  <li><a href="./Products-services.html" class="text-primary-500">Products/Services</a></li>
+                  <li><a href="./r&d.html" class="text-primary-500">R&D</a></li>
+                  <li><a href="./investments.html" class="text-primary-500">Investments</a></li>
+                </ul>
+              </div>
+              <div class="col-5">
+                <ul class="list-unstyled">
+                  <li><a href="./careers.html"  class="text-primary-500">Our Team</a></li>
+                  <li><a href="./blogs.html" class="text-primary-500">Blogs</a></li>
+                  <li><a href="./privacy-policy.html" class="text-primary-500">Privacy & Policy</a></li>
+                  <li><a href="./terms-conditions.html" class="text-primary-500">Terms & Conditions</a></li>
+                </ul>
+              </div>
+            </div>
           </div>
+          <ul class="social-links list-unstyled d-flex mt-3">
+            <li class="me-3"><a class="text-primary-500" href="#"><svg width="40" height="40"><use xlink:href="#facebook"></use></svg></a></li>
+            <li class="me-3"><a class="text-primary-500" href="#"><svg width="40" height="40"><use xlink:href="#twitter"></use></svg></a></li>
+            <li class="me-3"><a class="text-primary-500" href="#"><svg width="40" height="40"><use xlink:href="#instagram"></use></svg></a></li>
+            <li><a class="text-primary-500" href="#"><svg width="40" height="40"><use xlink:href="#linkedin"></use></svg></a></li>
+          </ul>
         </div>
-        <div class="col-lg-4 col-md-6 col-sm-6 pb-3">
-          <div class="footer-menu">
-            <h5 class="widget-title fw-semibold">Opening Hours</h5>
-            <table class="schedule">
-              <tr class="d-flex justify-content-between border-bottom py-2">
-                <td>Monday - Thursday</td>
-                <td class="text-primary">8:00 am - 6:00 pm</td>
-              </tr>
-              <tr class="d-flex justify-content-between border-bottom py-2">
-                <td>Friday - Saturday</td>
-                <td class="text-primary">10:00 am - 4:00 pm</td>
-              </tr>
-              <tr class="d-flex justify-content-between border-bottom py-2">
-                <td>Sunday</td>
-                <td class="text-primary">Emergency only</td>
-              </tr>
-              <tr class="d-flex justify-content-between border-bottom py-2">
-                <td>Personal</td>
-                <td class="text-primary">7:00 pm - 9:00 pm</td>
-              </tr>
-            </table>
-          </div>
-        </div>
+
       </div>
-      <div class="d-md-flex text-center justify-content-between border-top mt-5 py-4">
-        <p>© 2025 Medicare - All rights reserved</p>
-        <p>HTML Templates by: <a href="https://templatesjungle.com/" target="_blank" class="fw-semibold">
-            TemplatesJungle</a></p>
+
+      <!-- Bottom Footer -->
+      <div class="d-md-flex justify-content-between padding-small text-center border-top mt-4 pt-3">
+        <p class="mb-0 text-para">© 2025 Novacell - All rights reserved</p>
+        <p class="mb-0 text-para">Designed by : <a class="text-primary" href="https://pravishree.com" target="_blank" class="fw-semibold">Pravishree Designs Co.</a></p>
       </div>
     </div>
   </footer>
-
   <script src="js/jquery-1.11.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>

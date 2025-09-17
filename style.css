@@ -68,7 +68,7 @@ CSS STRUCTURE:
   --secondary-color : #e70a27;
   --primary-color-200: #e8f1ec;
   --primary-color-400: #e8f1ed;
-  --gray-color: #777F81;
+  --gray-color: #ccd7da;
   --bs-gray-300: #DCDCDC;
   --bs-light-rgb: rgba(255, 255, 255, 1);
   --bs-primary-rgb: rgb(33, 63, 97);
@@ -144,7 +144,7 @@ a:hover.light {
 }
 
 p {
-  color: var(--gray-color);
+  color: var(--accent-color);
 }
 
 b,
@@ -178,7 +178,9 @@ strong {
 .text-primary-500:hover {
   color: var(--light-color) !important;
 }
-
+.text-para{
+  color: var(--gray-color);
+}
 .text-dark {
   color: var(--dark-color) !important;
 }
