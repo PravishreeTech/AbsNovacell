@@ -49,8 +49,8 @@
 
 
           var swiper = new Swiper(".team-swiper", {
-            slidesPerView: 2,
-            spaceBetween: 20,
+            slidesPerView: 3,
+            spaceBetween: 10,
             pagination: {
               el: "#our-team .swiper-pagination",
               clickable: true,
@@ -58,11 +58,12 @@
             breakpoints: {
               0: {
                 slidesPerView: 1,
-                spaceBetween: 20,
               },
-              1200: {
+              768: {
                 slidesPerView: 2,
-                spaceBetween: 10,
+              },
+              992: {
+                slidesPerView: 3,
               },
             },
           });  

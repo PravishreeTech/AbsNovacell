@@ -1,670 +1,1024 @@
 
 <!DOCTYPE html>
-<html lang="en-US" class="hide-scroll">
-<head> 
-    <title>Dreadlocks and weave spa HTML Template Live Demo</title>
-    <meta name="Keywords">
-    <meta name="Description">
-    
-
-    <link rel="shortcut icon" href="https://csite.nicepage.com/favicon.ico" type="image/x-icon">
-
-    
-    
-
-
-    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no,width=device-width">
-
-<link rel="preconnect" href="https://csite.nicepage.com" />
-<link rel="preconnect" href="https://capp.nicepage.com" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://www.googletagmanager.com" />
-<link rel="preconnect" href="https://images01.nicepagecdn.com" />
-<link rel="preconnect" href="https://images03.nicepagecdn.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
-
-
-<script src="//capp.nicepage.com/d26129743f93ff361a27e5b7628907ea7d43e064/main-libs.js" ></script>
-<link href="//capp.nicepage.com/d26129743f93ff361a27e5b7628907ea7d43e064/main-libs.css" rel="stylesheet" />
-
-
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@200..900&family=Roboto:wght@200..900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@200..900&family=Roboto:wght@200..900&display=swap">
-    </noscript>
-
-
-
-
-
-<script>
-    window.isAuthenticated = 0;
-    window.useExternalGtmCode = 0;
-    window.clientUserId = 0;
-    window.clientUserName = '';
-    window.userCountryCode = '';
-    window.logPageEvent = 1;
-    window.userHasAdsParams = 0;
-    window.utmSourceFromReferrer = 0;
-    window.currentLang = '';
-    window.baseUrl = 'html-templates';
-    window.currentUrl = 'html-templates';
-    window.np_userId = '';
-    window.isAmplitudeInitialized = false;
-    window.sha256Email = '';
-    window.skipSetCountryCode = 0;
-
-    function getCookieOrLocalStorage(name) {
-        var nameEQ = name + "=";
-        var ca = document.cookie.split(';');
-        for (var i = 0; i < ca.length; i++) {
-            var c = ca[i];
-            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-            if (c.indexOf(nameEQ) == 0) {
-                return c.substring(nameEQ.length, c.length);
-            }
-        }
-        var lsValue = localStorage.getItem(name);
-        return !!lsValue;
-    }
-
-    function sendAnalyticsData(eventType, props, cb) {
-        var json = { data: {} };
-        json.userToken = np_userId;
-        json.data.adsParams = $.cookie('AdsParameters');
-        json.data.ga = $.cookie('_ga');
-        json.data.gac = $.cookie('_gac_UA-88868916-2');
-        json.data.userAgent = navigator.userAgent;
-        json.data.eventType = eventType;
-        json.data.props = props;
-        $.ajax({
-            'type': 'POST',
-            'url': '/Feedback/SendAdsLog',
-            'contentType': 'application/json; charset=utf-8',
-            'data': JSON.stringify(json),
-            'dataType': 'json',
-            'complete': cb || function() {}
-        });
-    }
-
-    function initializeAmplitudeUser() {
-        if (isAmplitudeInitialized) {
-            return;
-        }
-        isAmplitudeInitialized = true;
-
-        if (clientUserId > 0)
-        {
-            identifyAmplitudeUser(clientUserId, clientUserName);
-        }
-        else
-        {
-            identifyAmplitudeUser(null);
-        }
-    }
-
-    function sendAmplitudeAnalyticsData(eventName, eventProperties, userProperties, callback_function) {
-        initializeAmplitudeUser();
-
-        if (userProperties) {
-            if(userProperties.utm_source || userProperties.utm_campaign) {
-                var identify = new amplitude.Identify();
-                identify.setOnce("utm_campaign", userProperties.utm_campaign);
-                identify.setOnce("utm_source", userProperties.utm_source);
-                identify.setOnce("utm_content", userProperties.utm_content);
-                identify.setOnce("utm_group", userProperties.utm_group);
-                identify.setOnce("utm_term", userProperties.utm_term);
-                identify.setOnce("utm_page", userProperties.utm_page);
-                identify.setOnce("utm_page2", userProperties.utm_page);
-                identify.setOnce("referrer", userProperties.referrer);
-
-                amplitude.getInstance().identify(identify);
-
-                userProperties.utm_source_last = userProperties.utm_source;
-                userProperties.utm_campaign_last = userProperties.utm_campaign;
-                userProperties.utm_content_last = userProperties.utm_content;
-                userProperties.utm_group_last = userProperties.utm_group;
-                userProperties.utm_term_last = userProperties.utm_term;
-                userProperties.utm_page_last = userProperties.utm_page;
-            }
-
-            var userProps = objectWithoutProperties(userProperties, ["utm_campaign", "utm_source","utm_content", "utm_term", "utm_page", "utm_group", "referrer"]);
-            amplitude.getInstance().setUserProperties(userProps);
-        }
-
-        if (!eventProperties) {
-            eventProperties = {};
-        }
-
-        eventProperties.WebSite = 'true';
-        eventProperties.IsAuthenticated = window.isAuthenticated;
-        eventProperties.country_code = getCountryCode();
-        eventProperties.lang = window.currentLang || '';
-
-        var fullPageUrl = window.location.pathname.split('?')[0];
-        eventProperties.full_page_url = fullPageUrl;
-        eventProperties.page_url = clearPageUrl(fullPageUrl);
-
-        if (typeof callback_function === 'function') {
-            amplitude.getInstance().logEvent(eventName, eventProperties, callback_function);
-        } else {
-            amplitude.getInstance().logEvent(eventName, eventProperties);
-        }
-    }
-
-    function identifyAmplitudeUser(userId, token) {
-        if (userId) {
-            amplitude.getInstance().setUserProperties({
-                "Token": token,
-                "UserId": userId
-            });
-        }
-
-        var identify = new amplitude.Identify();
-        amplitude.getInstance().identify(identify);
-        if (userId) {
-            amplitude.getInstance().setUserId(userId);
-        }
-    }
-
-    function getUtmParamsFromUrl() {
-        var hash = window.location.hash;
-        var url = new URL(window.location.href);
-        if (hash && hash.indexOf('utm_') >= 0) {
-            url = new URL(window.location.origin + window.location.pathname + hash.replace('#', '?'));
-        }
-
-        if (!url.searchParams) {
-            return '';
-        }
-        return getUtmParams(url);
-    }
-
-    function hasGoogleIdFromUrl() {
-        var url = new URL(window.location.href);
-        if (!url.searchParams) {
-            return false;
-        }
-        return !!url.searchParams.get('gclid');
-    }
-
-    function waitForDOMAndAmplitude(callback) {
-        var domReady = false;
-        var ampReady = false;
-        let hasRun = false;
-
-        function tryRun() {
-            if (domReady && ampReady && !hasRun) {
-                hasRun = true;
-                callback();
-            }
-        }
-
-        if (document.readyState === "loading") {
-            document.addEventListener("DOMContentLoaded", function () {
-                domReady = true;
-                tryRun();
-            });
-        } else {
-            domReady = true;
-            tryRun();
-        }
-
-        window._onAmplitudeReady = function () {
-            amplitude.getInstance().init("878f4709123a5451aff838c1f870b849", null, {}, function() {
-                ampReady = true;
-                tryRun();
-            });
-        };
-    }
-
-    function sendAnalyticsFromUrl(referrer, pageType) {
-        var urlIsAvailable = typeof URL === "function" || (navigator.userAgent.indexOf('MSIE') !== -1 && typeof URL === 'object');
-        if (!urlIsAvailable) {
-            return;
-        }
-
-        var utmParams = getUtmParamsFromUrl();
-        if (!utmParams) {
-            return;
-        }
-
-        var gclidFromUrl = utmParams.gclid;
-        var utmParamsFromUrl = !!utmParams.utmSource || !!utmParams.utmCampaign || !!utmParams.gclid;
-        if (!utmParamsFromUrl && userHasAdsParams)
-        {
-            utmParams = getUtmParamsFromCookie();
-        }
-
-        var canLog = canLogToAmplitude(pageType);
-        if (utmParamsFromUrl || utmSourceFromReferrer) {
-            var fullPageUrl = window.location.pathname.split('?')[0];
-            var pageUrl = clearPageUrl(fullPageUrl);
-            var userProps = {
-                "utm_source": utmParams.utmSource,
-                "utm_campaign": utmParams.utmCampaign,
-                "utm_content": utmParams.utmContent,
-                "utm_group": utmParams.utmGroup,
-                "utm_term": utmParams.utmTerm,
-                "utm_page": getUtmPageValue(pageUrl),
-                "utm_lang": window.currentLang || '',
-                "referrer": referrer
-            };
-
-            if (gclidFromUrl) {
-                var landingUrl = pageUrl.startsWith('/') && pageUrl !== '/' ? pageUrl.substr(1) : pageUrl;
-                userProps.landing_page = landingUrl;
-
-                var event = {
-                    'Page': landingUrl,
-                    'Url': window.location.href,
-                    'utm_campaign_event': utmParams.utmCampaign,
-                    'utm_group_event': utmParams.utmGroup
-
-                }
-                sendAmplitudeAnalyticsData('Landing Page', event, userProps);
-            } else {
-                var eventProps = {
-                    "utm_source": utmParams.utmSource,
-                    "utm_campaign": utmParams.utmCampaign,
-                    "utm_content": utmParams.utmContent,
-                    "utm_group": utmParams.utmGroup,
-                    "utm_term": utmParams.utmTerm
-                };
-
-                if (utmParams.utmSource === "elastic") {
-                    sendAmplitudeAnalyticsData('Email Click', eventProps);
-                }
-
-                if (canLog) {
-                    sendAmplitudeAnalyticsData('Campaign', eventProps, userProps);
-                }
-            }
-        }
-
-        if (logPageEvent && canLog || (pageType === 'Pricing Page' && window.isValidCountry(true))) {
-            var pageEventProps = {
-                'type': pageType,
-                'accepted_country': isValidCountry(),
-                'force_log': !canLog
-            };
-
-            if (utmParams.gclid) {
-                pageEventProps.googleClickId = utmParams.gclid;
-            }
-
-            sendAmplitudeAnalyticsData('Page View', pageEventProps);
-        }
-    }
-
-    document.addEventListener('DOMContentLoaded', function () {
-        if (window.skipInitCookieConsent !== 1 && location.href.indexOf('/frame/') === -1 && window.location.href.indexOf('skipCookie') === -1) {
-            PureCookie.initCookieConsent();
-        }
-        if(!skipSetCountryCode) {
-            setCountryCode('https://location.nicepagesrv.com/country');
-        }
-        setUserIdCookie();
-    });
-</script>
-
-    <!-- Google Tag Manager -->
-    <script>
-        // Define dataLayer and the gtag function.
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-
-        var consentDefaultValue = 'granted';
-        gtag('consent', 'default', {
-            'ad_storage': consentDefaultValue,
-            'ad_user_data': consentDefaultValue,
-            'ad_personalization': consentDefaultValue,
-            'analytics_storage': consentDefaultValue
-        });
-        
-        if (hasGoogleIdFromUrl()) {
-            useExternalGtmCode = 1;
-        }
-        
-        function loadGTM() {
-            var w = window, d = document, s = 'script', l = 'dataLayer';
-            var i = useExternalGtmCode ? 'W76XGFR' : 'GTM-W76XGFR';
-            var src = useExternalGtmCode
-                ? 'https://load.api9.nicepage.com/nldlswob.js?st=' + i
-                : 'https://www.googletagmanager.com/gtm.js?id=' + i;
-
-            w[l] = w[l] || [];
-            w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-
-            var f = d.getElementsByTagName(s)[0];
-            var j = d.createElement(s);
-            var dl = l !== 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src = src + dl;
-            f.parentNode.insertBefore(j, f);
-        }
-
-        if ('requestIdleCallback' in window) {
-            requestIdleCallback(loadGTM);
-        } else {
-            setTimeout(loadGTM, 2000);
-        }
-    </script>
-    <!-- End Google Tag Manager -->
-    <!-- Facebook Pixel Code -->
-        <script>
-            if(window.hideFacebookPixelCode !== true) {
-                !function (f, b, e, v, n, t, s) {
-                    if (f.fbq) return; n = f.fbq = function () {
-                        n.callMethod ?
-                            n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-                    };
-                    if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-                    n.queue = []; t = b.createElement(e); t.async = !0;
-                    t.src = v; s = b.getElementsByTagName(e)[0];
-                    s.parentNode.insertBefore(t, s)
-                }(window, document, 'script',
-                    'https://connect.facebook.net/en_US/fbevents.js');
-
-                var fbInitOptions = { em: '' };
-                if (clientUserId > 0) {
-                    fbInitOptions.external_id = clientUserId;
-                }
-
-                fbq('init', '251025992170426', fbInitOptions);
-                fbq('track', 'PageView');
-            }
-        </script>
-        <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=251025992170426&ev=PageView&noscript=1" /></noscript>
-    <!-- End Facebook Pixel Code -->
-<!-- Amplitude & ShareASale -->
-<script>
-    function loadAmplitude() {
-        (function(e,t){
-            var n=e.amplitude||{_q:[],_iq:{}};
-            var r=t.createElement("script");
-            r.type="text/javascript";
-            r.integrity="sha384-d/yhnowERvm+7eCU79T/bYjOiMmq4F11ElWYLmt0ktvYEVgqLDazh4+gW9CKMpYW";
-            r.crossOrigin="anonymous";
-            r.async=true;
-            r.src="https://cdn.amplitude.com/libs/amplitude-5.2.2-min.gz.js";
-            r.onload=function(){
-                if (!e.amplitude.runQueuedFunctions) {
-                    console.log("[Amplitude] Error: could not load SDK");
-                }
-                if (typeof window._onAmplitudeReady === 'function') {
-                    window._onAmplitudeReady();
-                }
-            };
-            var i=t.getElementsByTagName("script")[0];
-            i.parentNode.insertBefore(r,i);
-
-            function s(e,t){e.prototype[t]=function(){this._q.push([t].concat(Array.prototype.slice.call(arguments,0)));return this;}}
-            var o=function(){this._q=[];return this;}
-            var a=["add","append","clearAll","prepend","set","setOnce","unset"];
-            for(var u=0;u<a.length;u++){s(o,a[u]);}
-            n.Identify=o;
-            var c=function(){this._q=[];return this;}
-            var l=["setProductId","setQuantity","setPrice","setRevenueType","setEventProperties"];
-            for(var p=0;p<l.length;p++){s(c,l[p]);}
-            n.Revenue=c;
-            var d=["init","logEvent","logRevenue","setUserId","setUserProperties","setOptOut","setVersionName","setDomain","setDeviceId","setGlobalUserProperties","identify","clearUserProperties","setGroup","logRevenueV2","regenerateDeviceId","groupIdentify","onInit","logEventWithTimestamp","logEventWithGroups","setSessionId","resetSessionId"];
-            function v(e){for(var t=0;t<d.length;t++){(function(t){e[d[t]]=function(){e._q.push([d[t]].concat(Array.prototype.slice.call(arguments,0)));};})(t);}}
-            v(n);
-            n.getInstance=function(e){e=(!e||0===e.length?"$default_instance":e).toLowerCase();if(!n._iq.hasOwnProperty(e)){n._iq[e]={_q:[]};v(n._iq[e]);}return n._iq[e];};
-            e.amplitude=n;
-        })(window,document);
-
-        waitForDOMAndAmplitude(function() {
-            var referrer = '';
-            var pageType = 'Template Page Preview';
-            sendAnalyticsFromUrl(referrer, pageType);
-        });
-    }
-
-    if ('requestIdleCallback' in window) {
-        requestIdleCallback(loadAmplitude);
-    } else {
-        setTimeout(loadGTM, 2000);
-    }
-
-    var shareasaleSSCID=shareasaleGetParameterByName("sscid");function shareasaleSetCookie(e,a,r,s,t){if(e&&a){var o,n=s?"; path="+s:"",i=t?"; domain="+t:"",S="";r&&((o=new Date).setTime(o.getTime()+r),S="; expires="+o.toUTCString()),document.cookie=e+"="+a+S+n+i+"; SameSite=None;Secure"}}function shareasaleGetParameterByName(e,a){a||(a=window.location.href),e=e.replace(/[\[\]]/g,"\\$&");var r=new RegExp("[?&]"+e+"(=([^&#]*)|&|#|$)").exec(a);return r?r[2]?decodeURIComponent(r[2].replace(/\+/g," ")):"":null}shareasaleSSCID&&shareasaleSetCookie("shareasaleSSCID",shareasaleSSCID,94670778e4,"/");
-</script>
-
-
-
-
-
-<!--[if lt IE 9]>
-    <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-
-
-
-
-
-
-
-    <script src="https://accounts.google.com/gsi/client?hl=en" defer></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            if (typeof google === 'undefined') {
-                return;
-            }
-            try {
-                google.accounts.id.initialize({
-                    context: 'signin',
-                    client_id: '13150095650-mo8psu2colep6uv90a2mu6r87u87s35a.apps.googleusercontent.com',
-                    callback: window.handleCredentialResponse,
-                    use_fedcm_for_prompt: true,
-                });
-
-                if (window.renderGoogleSignIdButton) {
-                    google.accounts.id.renderButton(
-                        document.getElementById('google-signin-button'),
-                        {
-                            theme: 'filled_blue',
-                            size: 'large',
-                            text: window.renderSignUpGoogleButton ? 'signup_with' : 'signin_with',
-                            width: '250',
-                            locale: 'en',
-                        }
-                    );
-                }
-
-                // display the One Tap dialog
-                if (!window.hideGoogleSignIdPromt) {
-                    google.accounts.id.prompt();
-                }
-            } catch (e) {
-                console.error(e);
-                if (typeof sendMessageOnServer === 'function') {
-                    sendMessageOnServer('auth.js google.accounts.id.initialize error', { error: JSON.stringify(e, Object.getOwnPropertyNames(e)) });
-                }
-            }
-        });
-    </script>
-
-
-    
-    <meta name="robots" content="noindex,nofollow">
-    <script type="text/javascript">
-        var device = 'desktop';
-        function init($) {
-            $('#previewDesktopBtn').click(function (e) {
-                setLivePreviewFrameSize($(this));
-                setActiveResponsiveButton(this);
-                e.preventDefault();
-            });
-
-            $('#previewLaptopBtn').click(function (e) {
-                setLivePreviewFrameSize($(this));
-                setActiveResponsiveButton(this);
-                e.preventDefault();
-            });
-            $('#previewTabletBtn').click(function (e) {
-                setLivePreviewFrameSize($(this));
-                setActiveResponsiveButton(this);
-                e.preventDefault();
-            });
-            $('#previewPhoneHorizontalBtn').click(function (e) {
-                setLivePreviewFrameSize($(this));
-                setActiveResponsiveButton(this);
-                e.preventDefault();
-            });
-            $('#previewPhoneBtn').click(function (e) {
-                setLivePreviewFrameSize($(this));
-                setActiveResponsiveButton(this);
-                e.preventDefault();
-            });
-
-            detectActiveResponsiveButton();
-        }
-
-        if (jQuery.isReady) {
-            init(jQuery);
-        } else {
-            jQuery(function ($) {
-                init($);
-            });
-        }
-
-        function setActiveResponsiveButton(btn) {
-            $(".page-preview-header > a").removeClass("active");
-            $(btn).addClass("active");
-        }
-
-        function detectActiveResponsiveButton() {
-            var d = device;
-            if (!d) {
-                d = 'desktop';
-            }
-            $("#preview" + d.charAt(0).toUpperCase() + d.substr(1) + "Btn").click();
-        }
-
-        function getDataPreviewSizeAttr(el) {
-            return el.closest("[data-preview-size]").attr("data-preview-size");
-        }
-
-        function setLivePreviewFrameSize(srcEl) {
-            var getScrollbarWidth = function () {
-                var s = $('<div style="width:100px;height:100px;overflow:scroll;visibility:hidden;position:absolute;top:-99999px"><div style="height:200px;"></div></div>')
-                    .appendTo("body");
-                var res = s.width() - s.find("div").last().width();
-                s.remove();
-                return res;
-            };
-            var attr = getDataPreviewSizeAttr(srcEl);
-            $('#livePreviewFrame').width(attr.indexOf("%") !== -1 ? attr : parseInt(attr, 10) + getScrollbarWidth());
-        }
-
-    </script>
-    <style>
-        .dialog-wrapper {
-            display: none !important;
-        }
-
-        .wrap,
-        #main {
-            height: 100vh;
-            margin: 0 !important;
-        }
-
-        iframe {
-            display: none;
-        }
-
-
-        html,
-        body {
-            height: 100%;
-        }
-
-        .page-preview {
-            border-radius: 0;
-            height: 100%;
-        }
-
-        .page-preview-header {
-            background: #f2f2f2;
-            border: none;
-            height: 70px;
-            position: relative;
-            text-align: center;
-        }
-
-        .page-preview-header > a {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 4px;
-        }
-
-        .page-preview-header > a:hover {
-            background: #e2f0fc;
-            text-decoration: none;
-        }
-
-        .page-preview-header > a.active {
-            background: #c9e4f9;
-        }
-
-        .page-preview-header > .close {
-            float: right;
-            margin-right: 10px;
-        }
-
-        .page-preview-body {
-            height: calc(100% - 70px);
-            overflow: hidden;
-            text-align: center;
-        }
-
-        .page-preview-body iframe {
-            border: none;
-            display: inline-block;
-            height: 100%;
-        }
-    </style>
-
+<html>
+
+<head>
+  <title>ABS-NOVACELL</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="author" content="TemplatesJungle">
+  <meta name="keywords" content="Medicare, Medical, Healthcare, HTML, Website Template">
+  <meta name="description" content="Medicare is a Medical Healthcare HTML Website Template">
+
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+
+  <!-- script
+    ================================================== -->
+  <script src="js/modernizr.js"></script>
 </head>
-    <body>
-        
+
+<body data-bs-spy="scroll" data-bs-target="#header-nav" tabindex="0">
 
 
-<div class="page-preview">
-    <div class="page-preview-header">
-        <a class="hidden-sm hidden-xs" href="#" id="previewDesktopBtn" data-preview-size="100%"><img alt="Responsive Desktop Mode" src="//csite.nicepage.com/Images/Site/responsive-desktop.png"></a>
-        <a class="hidden-sm hidden-xs" href="#" id="previewLaptopBtn" data-preview-size="1040px"><img alt="Responsive Laptop Mode" src="//csite.nicepage.com/Images/Site/responsive-laptop.png"></a>
-        <a class="hidden-xs" href="#" id="previewTabletBtn" data-preview-size="820px"><img alt="Responsive Tablet Mode" src="//csite.nicepage.com/Images/Site/responsive-tablet.png"></a>
-        <a class="hidden-xs" href="#" id="previewPhoneHorizontalBtn" data-preview-size="640px"><img alt="Responsive Phone Horizontal Mode" src="//csite.nicepage.com/Images/Site/responsive-phone-horizontal.png"></a>
-        <a class="hidden-xs" href="#" id="previewPhoneBtn" data-preview-size="440px"><img alt="Responsive Phone Mode" src="//csite.nicepage.com/Images/Site/responsive-phone.png"></a>
-        <a class="close" href="/ht/3125838/dreadlocks-and-weave-spa-html-template"><img alt="Close" src="//csite.nicepage.com/Images/Site/icon-close.png"></a>
+  <header id="header">
+    <nav class="header-top py-4">
+      <div class="container">
+        <div class="row justify-content-between align-items-center">
+          <div class="col-lg-5 col-md-4 col-sm-6">
+            <a class="navbar-brand" href="index.html">
+              <img src="images/main-logo.png" class="logo">
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-4 d-md-block d-sm-none">
+            <ul class="contact-list d-flex justify-content-lg-end flex-wrap list-unstyled m-0">
+              <li class="pe-5 pe-lg-0 pe-xxl-5 pb-3 pb-lg-0">
+                <svg class="location primary-color" width="24" height="24">
+                  <use xlink:href="#location"></use>
+                </svg>123 Arling, Miola, NY
+              </li>
+              <li class="ps-xl-3">
+                <svg class="phone primary-color" width="24" height="24">
+                  <use xlink:href="#phone"></use>
+                </svg>(+487) 384 9452
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="btn-book text-end">
+              <a href="booking.html" class="btn btn-medium btn-outline-primary btn-pill text-uppercase">Book
+                Appointment</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <nav id="primary-header" nav class="navbar navbar-expand-lg shadow-none" aria-label="navbar" height="30">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-primary"
+          aria-controls="navbar-primary" aria-expanded="false" aria-label="Toggle navigation">
+          <svg class="navbar-icon mt-3 primary-color-500 bg-light" width="50" height="50">
+            <use xlink:href="#navbar-icon"></use>
+          </svg>
+        </button>
+        <div class="header-bottom collapse navbar-collapse bg-light border-radius-10 py-2" id="navbar-primary">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item ps-4 pe-4 border-right">
+              <a class="nav-link text-dark active p-0 mt-3 mt-lg-0" aria-current="page" href="#intro">Home</a>
+            </li>
+            <li class="nav-item ps-4 pe-4 border-right">
+              <a class="nav-link text-dark p-0" href="#our-services">Services</a>
+            </li>
+            <li class="nav-item ps-4 pe-4 border-right">
+              <a class="nav-link text-dark p-0" href="#book-appointment">Booking</a>
+            </li>
+            <li class="nav-item ps-4 pe-4 border-right">
+              <a class="nav-link text-dark p-0" href="#our-team">Team</a>
+            </li>
+            <li class="nav-item ps-4 pe-4 border-right">
+              <a class="nav-link text-dark p-0" href="#department">Department</a>
+            </li>
+            <li class="nav-item ps-4 pe-4 border-right">
+              <a class="nav-link text-dark p-0" href="#faqs">Faqs</a>
+            </li>
+            <li class="nav-item ps-4 pe-4 border-right">
+              <a class="nav-link text-dark p-0" href="#latest-blog">Blog</a>
+            </li>
+            <li class="nav-item ps-4 pe-3 dropdown border-right">
+              <a class="nav-link text-dark p-0 dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                aria-expanded="false">Pages <iconify-icon icon="iconamoon:arrow-down-2-fill"></iconify-icon> </a>
+              <ul class="dropdown-menu">
+                <li class="py-1"><a href="about.html" class="dropdown-item text-uppercase">About <span
+                      class="badge bg-secondary">Pro</span></a></li>
+                <li class="py-1"><a href="blog.html" class="dropdown-item text-uppercase">Blog <span
+                      class="badge bg-secondary">Pro</span></a></li>
+                <li class="py-1"><a href="blog-single.html" class="dropdown-item text-uppercase">Blog-Single <span
+                      class="badge bg-secondary">Pro</span></a></li>
+                <li class="py-1"><a href="booking.html" class="dropdown-item text-uppercase">Booking <span
+                      class="badge bg-secondary">Pro</span></a></li>
+                <li class="py-1"><a href="services.html" class="dropdown-item text-uppercase">Services <span
+                      class="badge bg-secondary">Pro</span></a></li>
+                <li class="py-1"><a href="departments.html" class="dropdown-item text-uppercase">Departments
+                    <span class="badge bg-secondary">Pro</span></a></li>
+                <li class="py-1"><a href="gallery.html" class="dropdown-item text-uppercase">Gallery <span
+                      class="badge bg-secondary">Pro</span></a></li>
+                <li class="py-1"><a href="pricing.html" class="dropdown-item text-uppercase">Pricing <span
+                      class="badge bg-secondary">Pro</span></a></li>
+                <li class="py-1"><a href="contact.html" class="dropdown-item text-uppercase">Contact <span
+                      class="badge bg-secondary">Pro</span></a></li>
+                <li class="py-1"><a href="team.html" class="dropdown-item text-uppercase">Our Team <span
+                      class="badge bg-secondary">Pro</span></a></li>
+                <li class="py-1"><a href="review.html" class="dropdown-item text-uppercase">Reviews <span
+                      class="badge bg-secondary">Pro</span></a></li>
+                <li class="py-1"><a href="faq.html" class="dropdown-item text-uppercase">FAQs <span
+                      class="badge bg-secondary">Pro</span></a></li>
+              </ul>
+            </li>
+            <li class="nav-item ps-4 pe-4 border-right">
+              <a class="nav-link text-dark p-0 text-uppercase fw-bold text-decoration-underline"
+                href="https://templatesjungle.gumroad.com/l/medicare" target="_blank">Get Pro</a>
+            </li>
+          </ul>
+          <form class="search-form mb-3 mb-lg-0" role="search">
+            <svg class="search primary-color position-absolute" width="18" height="18">
+              <use xlink:href="#search"></use>
+            </svg>
+            <input class="form-control border-0 ps-4 position-relative" type="search" placeholder="Search.."
+              aria-label="Search">
+          </form>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section id="intro" class="position-relative overflow-hidden">
+    <div class="banner">
+      <img src="images/banner-image.jpg" alt="banner" class="img-fluid">
+      <div class="container">
+        <div class="banner-content position-absolute padding-large text-white">
+          <h6 class="fw-bold text-uppercase">About Your Health</h6>
+          <h1 class="display-3 fw-bold">Your Well-Being Is Our Priority</h1>
+          <p class="mt-3 mb-4 text-white">From preventive care to specialized treatments, our expert team is committed
+            to delivering personalized, compassionate healthcare. Trust us to guide you on your journey to better health
+            with cutting-edge medicine and unwavering support.</p>
+          <a href="contact.html" class="btn btn-medium btn-primary btn-pill text-uppercase">Contact us</a>
+        </div>
+      </div>
     </div>
-    <div class="page-preview-body">
-        <iframe id="livePreviewFrame" src="https://website3125827.nicepage.io/Home.html?version=c81eb515-22f2-4f01-9dd3-4b5d600744a7" width="1057" height="640" style="width:100%;"></iframe>
-    </div>
-</div>
-<a style="position:absolute;top:17px;left:10px;" href="/"><img alt="NicePage.com" src="//csite.nicepage.com/Images/logo-w.png"></a>
+  </section>
 
-        <script>
-            if (window.parent) {
-                var _w = 0, _h = 0;
-                var updateFormSize = function () {
-                    var form = $('form.shaped-form-extended,form.shaped-form');
-                    var w = form.outerWidth(true);
-                    var h = form.outerHeight(true);
-                    if (Math.abs(_w - w) > 5 || Math.abs(_h - h) > 5) {
-                        _w = w;
-                        _h = h;
-                        var msg = { key: 'login-frame-size', width: w, height: h };
-                        window.parent.postMessage(msg, "*");
-                    }
-                    setTimeout(updateFormSize, 300);
-                }
-                updateFormSize();
-            }
-        </script>
-    </body>
+  <section id="brand-collection" class="padding-large overflow-hidden">
+    <div class="container">
+      <div class="row justify-content-between align-items-baseline">
+        <div class="col text-center pb-3">
+          <img src="images/betael.png" alt="brand" class="top-image">
+          <img src="images/betael1.png" alt="brand" class="bottom-image">
+        </div>
+        <div class="col text-center pb-3">
+          <img src="images/healer.png" alt="brand" class="top-image">
+          <img src="images/healer1.png" alt="brand" class="bottom-image">
+        </div>
+        <div class="col text-center pb-3">
+          <img src="images/lifetrace.png" alt="brand" class="top-image">
+          <img src="images/lifetrace1.png" alt="brand" class="bottom-image">
+        </div>
+        <div class="col text-center pb-3">
+          <img src="images/medcare.png" alt="brand" class="top-image">
+          <img src="images/medcare1.png" alt="brand" class="bottom-image">
+        </div>
+        <div class="col text-center">
+          <img src="images/soven.png" alt="brand" class="top-image">
+          <img src="images/soven1.png" alt="brand" class="bottom-image">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="our-services"
+    style="background-image: url(images/services-bg.jpg); background-repeat: no-repeat; background-position: center; background-position: top;">
+    <div class="container">
+      <div class="row">
+
+        <div
+          class="display-header text-light d-flex flex-wrap align-items-center justify-content-center padding-medium">
+          <div class="col-md-6 col-sm-12 text-center">
+            <h2 class="text-light display-4 fw-bold">Our Services</h2>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 pb-3">
+          <div class="icon-box p-4 bg-light border-radius-10 text-center shadow-sm">
+            <div class="icon-box-icon">
+              <svg class="home-thermometer mt-3 primary-color-500" width="50" height="50">
+                <use xlink:href="#home-thermometer" />
+              </svg>
+            </div>
+            <div class="icon-box-content">
+              <h3 class="card-title py-2">General Practitioners</h3>
+              <p>Aliquam etiam lectus adipiscing est auctor mi quisque non viverra.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 pb-3">
+          <div class="icon-box p-4 bg-light border-radius-10 text-center shadow-sm">
+            <div class="icon-box-icon">
+              <svg class="pregnant-woman mt-3 primary-color-500" width="50" height="50">
+                <use xlink:href="#pregnant-woman" />
+              </svg>
+            </div>
+            <div class="icon-box-content">
+              <h3 class="card-title py-2">Pregnancy Supports</h3>
+              <p>Aliquam etiam lectus adipiscing est auctor mi quisque non viverra.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 pb-3">
+          <div class="icon-box p-4 bg-light border-radius-10 text-center shadow-sm">
+            <div class="icon-box-icon">
+              <svg class="nutrition mt-3 primary-color-500" width="50" height="50">
+                <use xlink:href="#nutrition" />
+              </svg>
+            </div>
+            <div class="icon-box-content">
+              <h3 class="card-title py-2">Nutritional Support</h3>
+              <p>Aliquam etiam lectus adipiscing est auctor mi quisque non viverra.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 pb-3">
+          <div class="icon-box p-4 bg-light border-radius-10 text-center shadow-sm">
+            <div class="icon-box-icon">
+              <svg class="local-pharmacy mt-3 primary-color-500" width="50" height="50">
+                <use xlink:href="#local-pharmacy" />
+              </svg>
+            </div>
+            <div class="icon-box-content">
+              <h3 class="card-title py-2">Pharmaceutical care</h3>
+              <p>Aliquam etiam lectus adipiscing est auctor mi quisque non viverra.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="book-appointment" class="padding-large mb-0">
+    <div class="container">
+      <div class="display-header">
+        <h2 class="display-5 fw-bold text-dark">Book Appointment or call: <span class="text-primary-500">(+487) 384
+            9452</span></h2>
+      </div>
+      <form class="contact-form d-flex flex-wrap mt-5 gx-1">
+        <div class="col-lg-6 col-md-12 col-sm-12 mb-3">
+          <select class="form-select focus-transparent border border-radius-10 ps-4" aria-invalid="false" name="choose">
+            <option value="Select Your Department">Select Department </option>
+            <option value="Department">Department of Physiotherapy</option>
+            <option value="Department">Department of Dentistry</option>
+            <option value="Department">ENT Department</option>
+            <option value="Department">Department of Pharmacy</option>
+            <option value="Department">Nursing Department</option>
+          </select>
+        </div>
+        <div class="col-lg-6 col-md-12 col-sm-12 mb-3">
+          <select class="form-select focus-transparent border ps-4 border-radius-10" aria-invalid="false" name="choose">
+            <option value="Select Your Doctor">Select Doctor</option>
+            <option value="Naidan Smith">William Davies</option>
+            <option value="Danial Frankie">Charlotte Taylor</option>
+            <option value="Jason Roy">William Jones</option>
+          </select>
+        </div>
+        <div class="col-lg-6 col-md-12 col-sm-12 mb-3">
+          <input type="text" name="name" placeholder="Full Name" class="border ps-4 border-radius-10">
+        </div>
+        <div class="col-lg-6 col-md-12 col-sm-12 mb-3">
+          <input type="text" name="name" placeholder="Phone Number" class="border ps-4 border-radius-10">
+        </div>
+        <div class="col-lg-6 col-md-12 col-sm-12 mb-3">
+          <div class="input-group date" id="datepicker">
+            <input type="date" id="start" name="appointment" min="2018-01-01" max="2018-12-31" placeholder="Choose Date"
+              class="bg-transparent ps-4 border border-radius-10 position-relative">
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-12 col-sm-12 mb-3">
+          <div class="input-group time" id="timepicker">
+            <input type="time" id="start" name="appointment" min="9AM" max="6PM"
+              class="bg-transparent ps-4 border border-radius-10 position-relative">
+          </div>
+        </div>
+      </form>
+      <a href="#" class="btn btn-medium btn-primary btn-pill mt-3 text-uppercase">Book an appointment</a>
+    </div>
+  </section>
+
+  <section id="testimonial"
+    style="background-image: url(images/review-bg.jpg); background-repeat: no-repeat; background-position: right; height: 595px;">
+    <div class="container">
+      <div class="row align-items-center padding-medium justify-content-center">
+        <div class="col-md-8">
+          <div class="review-content bg-white bg-opacity-75 p-5">
+            <div class="swiper testimonial-swiper">
+              <div class="swiper-wrapper position-relative">
+                <div class="swiper-slide">
+                  <div class="review-item">
+                    <svg class="quote quote-up primary-color-500 position-absolute" width="80" height="70">
+                      <use xlink:href="#quote-up" />
+                    </svg>
+                    <blockquote class="fs-4">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.The more content you provide about
+                        you. Lorem, Quos saepe suscipit, nemo dolore sapiente!</p>
+                      <div class="author-detail">
+                        <div class="name fs-3 fw-bold text-dark">James Rodrigo</div>
+                        <span class="text-primary text-uppercase fs-6">Customer</span>
+                      </div>
+                    </blockquote>
+                    <svg class="quote quote-down primary-color-500 position-absolute" width="80" height="70">
+                      <use xlink:href="#quote-down" />
+                    </svg>
+                  </div>
+                </div><!--swiper-slide-->
+                <div class="swiper-slide">
+                  <div class="review-item">
+                    <svg class="quote quote-up primary-color-500 position-absolute" width="80" height="70">
+                      <use xlink:href="#quote-up" />
+                    </svg>
+                    <blockquote class="fs-4">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.The more content you provide about
+                        you. Lorem, Quos saepe suscipit, nemo dolore sapiente!</p>
+                      <div class="author-detail">
+                        <div class="name fs-3 fw-bold text-dark">Jenny Rose</div>
+                        <span class="text-primary text-uppercase fs-6">Customer</span>
+                      </div>
+                    </blockquote>
+                    <svg class="quote quote-down primary-color-500 position-absolute" width="80" height="70">
+                      <use xlink:href="#quote-down" />
+                    </svg>
+                  </div>
+                </div><!--swiper-slide-->
+                <div class="swiper-slide">
+                  <div class="review-item">
+                    <svg class="quote quote-up primary-color-500 position-absolute" width="80" height="70">
+                      <use xlink:href="#quote-up" />
+                    </svg>
+                    <blockquote class="fs-4">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.The more content you provide about
+                        you. Lorem, Quos saepe suscipit, nemo dolore sapiente!</p>
+                      <div class="author-detail">
+                        <div class="name fs-3 fw-bold text-dark">Wednesday Marigold</div>
+                        <span class="text-primary text-uppercase fs-6">Customer</span>
+                      </div>
+                    </blockquote>
+                    <svg class="quote quote-down primary-color-500 position-absolute" width="80" height="70">
+                      <use xlink:href="#quote-down" />
+                    </svg>
+                  </div>
+                </div><!--swiper-slide-->
+              </div>
+              <div class="swiper-pagination text-left"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="our-team" class="padding-large">
+    <div class="container">
+      <div class="row">
+        <div class="display-header mb-5">
+          <h2 class="display-5 fw-bold text-dark">Our Team</h2>
+        </div>
+        <div class="team-content">
+          <div class="swiper team-swiper">
+            <div class="swiper-wrapper pb-5">
+
+              <div class="swiper-slide">
+                <div class="team-member d-flex align-items-center">
+                  <div class="col-md-6">
+                    <div class="image-holder me-4 mb-4">
+                      <img src="images/team-item.jpg" alt="team member" class="border-radius-10 img-fluid">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="member-info">
+                      <h3 class="fs-4 fw-bold text-dark">Dr. Leslie Taylor</h3>
+                      <span class="text-uppercase fs-6 text-cadet-blue pb-2 d-block">Pediatrician</span>
+                      <p>Dolor sit amet, consectetur adipiscing elit. Dignissim massa diam elementum habitant fames ac
+                        penatibus et.</p>
+                      <ul class="social-links list-unstyled d-flex">
+                        <li>
+                          <a href="#">
+                            <svg class="facebook text-primary-500 me-4" width="30" height="30">
+                              <use xlink:href="#facebook" />
+                            </svg>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <svg class="twitter text-primary-500 me-4" width="30" height="30">
+                              <use xlink:href="#twitter" />
+                            </svg>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <svg class="instagram text-primary-500 me-4" width="30" height="30">
+                              <use xlink:href="#instagram" />
+                            </svg>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <svg class="youtube text-primary-500" width="30" height="30">
+                              <use xlink:href="#youtube" />
+                            </svg>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="team-member d-flex align-items-center">
+                  <div class="col-md-6">
+                    <div class="image-holder me-4 mb-4">
+                      <img src="images/team-item1.jpg" alt="team member" class="border-radius-10 img-fluid">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="member-info">
+                      <h3 class="fs-4 fw-bold text-dark">Dr. Zachary Brown</h3>
+                      <span class="text-uppercase fs-6 text-cadet-blue pb-2 d-block">Cardiologist</span>
+                      <p>Dolor sit amet, consectetur adipiscing elit. Dignissim massa diam elementum habitant fames ac
+                        penatibus et.</p>
+                      <ul class="social-links list-unstyled d-flex">
+                        <li>
+                          <a href="#">
+                            <svg class="facebook text-primary-500 me-4" width="30" height="30">
+                              <use xlink:href="#facebook" />
+                            </svg>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <svg class="twitter text-primary-500 me-4" width="30" height="30">
+                              <use xlink:href="#twitter" />
+                            </svg>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <svg class="instagram text-primary-500 me-4" width="30" height="30">
+                              <use xlink:href="#instagram" />
+                            </svg>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <svg class="youtube text-primary-500" width="30" height="30">
+                              <use xlink:href="#youtube" />
+                            </svg>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="team-member d-flex align-items-center">
+                  <div class="col-md-6">
+                    <div class="image-holder me-4 mb-4">
+                      <img src="images/team-item2.jpg" alt="team member" class="border-radius-10 img-fluid">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="member-info">
+                      <h3 class="fs-4 fw-bold text-dark">Dr. Isabella Davies</h3>
+                      <span class="text-uppercase fs-6 text-cadet-blue pb-2 d-block">Gynecologist</span>
+                      <p>Dolor sit amet, consectetur adipiscing elit. Dignissim massa diam elementum habitant fames ac
+                        penatibus et.</p>
+                      <ul class="social-links list-unstyled d-flex">
+                        <li>
+                          <a href="#">
+                            <svg class="facebook text-primary-500 me-4" width="30" height="30">
+                              <use xlink:href="#facebook" />
+                            </svg>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <svg class="twitter text-primary-500 me-4" width="30" height="30">
+                              <use xlink:href="#twitter" />
+                            </svg>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <svg class="instagram text-primary-500 me-4" width="30" height="30">
+                              <use xlink:href="#instagram" />
+                            </svg>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <svg class="youtube text-primary-500" width="30" height="30">
+                              <use xlink:href="#youtube" />
+                            </svg>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+        <!-- team-content -->
+      </div>
+    </div>
+  </section>
+
+  <section id="department" class="overflow-hidden">
+    <div class="container-md">
+      <div class="row">
+        <div class="medical-department-tab bg-primary-200 d-flex align-items-start padding-large ps-5 border-radius-20">
+          <div class="nav nav-tabs border-0 col-lg-3 col-md-3 ps-4" id="medical-tab" role="tablist"
+            aria-orientation="vertical">
+            <button class="nav-link active text-uppercase text-cadet-blue border-0 rounded-3 mb-4" id="laboratory-tab"
+              data-bs-toggle="tab" data-bs-target="#laboratory" type="button" role="tab" aria-controls="laboratory"
+              aria-selected="true">Laboratory Analysis</button>
+            <button class="nav-link text-uppercase text-cadet-blue border-0 rounded-3 mb-4" id="cardiology-tab"
+              data-bs-toggle="tab" data-bs-target="#cardiology" type="button" role="tab" aria-controls="cardiology"
+              aria-selected="false">Cardiology Clinic</button>
+            <button class="nav-link text-uppercase text-cadet-blue border-0 rounded-3 mb-4" id="gynecology-tab"
+              data-bs-toggle="tab" data-bs-target="#gynecology" type="button" role="tab" aria-controls="gynecology"
+              aria-selected="false">Gynecology Clinic</button>
+            <button class="nav-link text-uppercase text-cadet-blue border-0 rounded-3 mb-4" id="pathology-tab"
+              data-bs-toggle="tab" data-bs-target="#pathology" type="button" role="tab" aria-controls="pathology"
+              aria-selected="false">Pathology Clinic</button>
+            <button class="nav-link text-uppercase text-cadet-blue border-0 rounded-3 mb-4" id="pediatrics-tab"
+              data-bs-toggle="tab" data-bs-target="#pediatrics" type="button" role="tab" aria-controls="pediatrics"
+              aria-selected="false">Pediatrics Clinic</button>
+            <button class="nav-link text-uppercase text-cadet-blue border-0 rounded-3" id="neurology-tab"
+              data-bs-toggle="tab" data-bs-target="#neurology" type="button" role="tab" aria-controls="neurology"
+              aria-selected="false">Neurology Clinic</button>
+          </div>
+          <div class="tab-content col-lg-8 col-md-8" id="tabContent">
+            <div class="tab-pane fade show active position-relative" id="laboratory" role="tabpanel"
+              aria-labelledby="laboratory-tab" tabindex="0">
+              <h2 class="display-5 fw-bold pb-3 text-dark">Laboratory Analysis</h2>
+              <p>Laboratory analysis means a test performed by a labo- ratory on body fluid, tissue, or excretion for
+                the purpose of determining the presence, absence, or concentration of various substances in the human
+                body.</p>
+              <p>Sampling is the process of collecting a portion of an environmental medium as representative of the
+                locally remaining medium. The collected portion of the medium is then analyzed to determine the
+                radionuclide concentration.</p>
+              <p><a href="#" class="text-primary pe-3">Neurocritical Care</a><a href="#" class="text-primary pe-3">Neuro
+                  Oncology</a><a href="#" class="text-primary pe-3">Geriatric Neurology</a></p>
+              <a href="departments.html" class="btn btn-medium btn-primary btn-pill mt-4">Learn More</a>
+            </div>
+            <div class="tab-pane fade position-relative" id="cardiology" role="tabpanel"
+              aria-labelledby="cardiology-tab" tabindex="0">
+              <h2 class="display-5 fw-bold pb-3 text-dark">Cardiology Clinic</h2>
+              <p>Vel non viverra ligula odio ornare turpis mauris. Odio aliquam, tincidunt ut vitae elit risus. Tempor
+                egestas condimentum et ac rutrum dui, odio.Vel non viverra ligula odio ornare turpis mauris. Aliquam,
+                tincidunt ut vitae elit risus.</p>
+              <p> Tempor egestas condimentum et ac rutrum dui, odio. Non viverra ligula odio ornare turpis mauris. Dio a
+                Vel non viverra ligula odio ornare turpis mauris.</p>
+              <p><a href="#" class="text-primary pe-3">Neurocritical Care</a><a href="#" class="text-primary pe-3">Neuro
+                  Oncology</a><a href="#" class="text-primary pe-3">Geriatric Neurology</a></p>
+              <a href="departments.html" class="btn btn-medium btn-primary btn-pill mt-4">Learn More</a>
+            </div>
+            <div class="tab-pane fade position-relative" id="gynecology" role="tabpanel"
+              aria-labelledby="gynecology-tab" tabindex="0">
+              <h2 class="display-5 fw-bold pb-3 text-dark">Gynecology Clinic</h2>
+              <p>Vel non viverra ligula odio ornare turpis mauris. Odio aliquam, tincidunt ut vitae elit risus. Tempor
+                egestas condimentum et ac rutrum dui, odio.Vel non viverra ligula odio ornare turpis mauris. Aliquam,
+                tincidunt ut vitae elit risus.</p>
+              <p> Tempor egestas condimentum et ac rutrum dui, odio. Non viverra ligula odio ornare turpis mauris. Dio a
+                Vel non viverra ligula odio ornare turpis mauris.</p>
+              <p><a href="#" class="text-primary pe-3">Neurocritical Care</a><a href="#" class="text-primary pe-3">Neuro
+                  Oncology</a><a href="#" class="text-primary pe-3">Geriatric Neurology</a></p>
+              <a href="departments.html" class="btn btn-medium btn-primary btn-pill mt-4">Learn More</a>
+            </div>
+            <div class="tab-pane fade position-relative" id="pathology" role="tabpanel" aria-labelledby="pathology-tab"
+              tabindex="0">
+              <h2 class="display-5 fw-bold pb-3 text-dark">Pathology Clinic</h2>
+              <p>Vel non viverra ligula odio ornare turpis mauris. Odio aliquam, tincidunt ut vitae elit risus. Tempor
+                egestas condimentum et ac rutrum dui, odio.Vel non viverra ligula odio ornare turpis mauris. Aliquam,
+                tincidunt ut vitae elit risus.</p>
+              <p> Tempor egestas condimentum et ac rutrum dui, odio. Non viverra ligula odio ornare turpis mauris. Dio a
+                Vel non viverra ligula odio ornare turpis mauris.</p>
+              <p><a href="#" class="text-primary pe-3">Neurocritical Care</a><a href="#" class="text-primary pe-3">Neuro
+                  Oncology</a><a href="#" class="text-primary pe-3">Geriatric Neurology</a></p>
+              <a href="departments.html" class="btn btn-medium btn-primary btn-pill mt-4">Learn More</a>
+            </div>
+            <div class="tab-pane fade position-relative" id="pediatrics" role="tabpanel"
+              aria-labelledby="pediatrics-tab" tabindex="0">
+              <h2 class="display-5 fw-bold pb-3 text-dark">Pediatrics Clinic</h2>
+              <p>Vel non viverra ligula odio ornare turpis mauris. Odio aliquam, tincidunt ut vitae elit risus. Tempor
+                egestas condimentum et ac rutrum dui, odio.Vel non viverra ligula odio ornare turpis mauris. Aliquam,
+                tincidunt ut vitae elit risus.</p>
+              <p> Tempor egestas condimentum et ac rutrum dui, odio. Non viverra ligula odio ornare turpis mauris. Dio a
+                Vel non viverra ligula odio ornare turpis mauris.</p>
+              <p><a href="#" class="text-primary pe-3">Neurocritical Care</a><a href="#" class="text-primary pe-3">Neuro
+                  Oncology</a><a href="#" class="text-primary pe-3">Geriatric Neurology</a></p>
+              <a href="departments.html" class="btn btn-medium btn-primary btn-pill mt-4">Learn More</a>
+            </div>
+            <div class="tab-pane fade position-relative" id="neurology" role="tabpanel" aria-labelledby="neurology-tab"
+              tabindex="0">
+              <h2 class="display-5 fw-bold pb-3 text-dark">Neurology Clinic</h2>
+              <p>Vel non viverra ligula odio ornare turpis mauris. Odio aliquam, tincidunt ut vitae elit risus. Tempor
+                egestas condimentum et ac rutrum dui, odio.Vel non viverra ligula odio ornare turpis mauris. Aliquam,
+                tincidunt ut vitae elit risus.</p>
+              <p> Tempor egestas condimentum et ac rutrum dui, odio. Non viverra ligula odio ornare turpis mauris. Dio a
+                Vel non viverra ligula odio ornare turpis mauris.</p>
+              <p><a href="#" class="text-primary pe-3">Neurocritical Care</a><a href="#" class="text-primary pe-3">Neuro
+                  Oncology</a><a href="#" class="text-primary pe-3">Geriatric Neurology</a></p>
+              <a href="departments.html" class="btn btn-medium btn-primary btn-pill mt-4">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faqs" class="padding-large pb-0">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="display-header mb-5">
+            <h2 class="display-5 fw-bold text-center text-dark">We’ve Got Answers</h2>
+          </div>
+          <div class="accordion" id="accordion">
+            <div class="accordion-item border-0 py-3">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button fs-4 fw-bold text-dark bg-transparent focus-transparent text-capitalize shadow-none"
+                  type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
+                  aria-controls="collapseOne">
+                  Why to believe with Insove medical healthcare ?
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse border-0 collapse show" data-bs-parent="#accordion">
+                <div class="accordion-body">
+                  <p>Diam orci gravida convallis at enim risus viverra. Hac mi tristique in aliquet tincidunt nam lectus
+                    nec. Placerat interdum auctor facilisi massa laoreet hendrerit posuere a. Tristique ultricies
+                    consectetu at.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item border-0 py-3">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button fs-4 fw-bold text-dark bg-transparent collapsed focus-transparent text-capitalize shadow-none"
+                  type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
+                  aria-controls="collapseTwo">
+                  Will we get healthcare updates after surgery ?
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordion">
+                <div class="accordion-body">
+                  <p>This is the second item's accordion body.It is hidden by default, until the collapse plugin adds
+                    the
+                    appropriate classes that we use to style each element. These classes control the overall appearance,
+                    as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or
+                    overriding our default variables.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item border-0 py-3">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button fs-4 fw-bold text-dark bg-transparent collapsed focus-transparent text-capitalize shadow-none"
+                  type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"
+                  aria-controls="collapseThree">
+                  What is the cost for just check-up ?
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordion">
+                <div class="accordion-body">
+                  <p>This is the third item's accordion body.It is hidden by default, until the collapse plugin adds the
+                    appropriate classes that we use to style each element. These classes control the overall appearance,
+                    as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or
+                    overriding our default variables.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item border-0 py-3">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button fs-4 fw-bold text-dark bg-transparent collapsed focus-transparent text-capitalize shadow-none"
+                  type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false"
+                  aria-controls="collapseFour">
+                  Can i cancel my appointment ?
+                </button>
+              </h2>
+              <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordion">
+                <div class="accordion-body">
+                  <p>This is the third item's accordion body.It is hidden by default, until the collapse plugin adds the
+                    appropriate classes that we use to style each element. These classes control the overall appearance,
+                    as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or
+                    overriding our default variables.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="latest-blog" class="padding-large">
+    <div class="container">
+      <div class="row">
+        <div class="display-header">
+          <h2 class="display-5 fw-bold text-dark">Our Recent Posts</h2>
+        </div>
+        <div class="post-grid d-flex flex-wrap mt-4">
+          <div class="col-lg-4 col-md-6 col-sm-12 mb-5">
+            <div class="card-item pe-3">
+              <div class="card border-0 bg-transparent">
+                <div class="card-image position-relative">
+                  <img src="images/post-item1.jpg" alt="" class="post-image img-fluid border-radius-top-10">
+                  <span
+                    class="bg-primary-dim text-light position-absolute text-uppercase text-capitalize">Medical</span>
+                </div>
+              </div>
+              <div class="card-body p-3 mt-2">
+                <div class="meta-date">Jan 2, 2023</div>
+                <h3 class="card-title fs-3 text-capitalize fw-semibold mt-3">
+                  <a href="blog-single.html">10 foods to avoid for your heart health</a>
+                </h3>
+                <p>It’s normal to feel anxiety, worry and grief any time you’re diagnosed with a condition that’s
+                  certainly true... <a href="blog-single.html" class="text-decoration-underline"><em>Read more</em></a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12 mb-5">
+            <div class="card-item pe-3">
+              <div class="card border-0 bg-transparent">
+                <div class="card-image position-relative">
+                  <img src="images/post-item2.jpg" alt="" class="post-image img-fluid border-radius-top-10">
+                  <span class="bg-primary-dim text-light position-absolute text-uppercase text-capitalize">Mental
+                    Health</span>
+                </div>
+              </div>
+              <div class="card-body p-3 mt-2">
+                <div class="meta-date">Jan 3, 2023</div>
+                <h3 class="card-title fs-3 text-capitalize fw-semibold mt-3">
+                  <a href="blog-single.html">How to be relax & calm in hard situations</a>
+                </h3>
+                <p>It’s normal to feel anxiety, worry and grief any time you’re diagnosed with a condition that’s
+                  certainly true... <a href="blog-single.html" class="text-decoration-underline"><em>Read more</em></a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12 mb-5">
+            <div class="card-item pe-2">
+              <div class="card border-0 bg-transparent">
+                <div class="card-image position-relative">
+                  <img src="images/post-item3.jpg" alt="" class="post-image img-fluid border-radius-top-10">
+                  <span class="bg-primary-dim text-light position-absolute text-uppercase text-capitalize">Dental
+                    Health</span>
+                </div>
+              </div>
+              <div class="card-body p-3 mt-2">
+                <div class="meta-date">Jan 4, 2023</div>
+                <h3 class="card-title fs-3 text-capitalize fw-semibold mt-3">
+                  <a href="blog-single.html">Best ways to make your teeth strong</a>
+                </h3>
+                <p>It’s normal to feel anxiety, worry and grief any time you’re diagnosed with a condition that’s
+                  certainly true... <a href="blog-single.html" class="text-decoration-underline"><em>Read more</em></a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="blog.html" class="btn btn-medium btn-primary btn-pill text-uppercase text-center mx-auto">Read more
+        blogs</a>
+    </div>
+  </section>
+
+  <section id="about-us" class="padding-large pt-0">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="counter-info text-center">
+            <div
+              class="counter-number text-primary-500 display-2 fw-semibold d-flex align-items-center justify-content-center">
+              <span class="counter-prefix">+</span>
+              <h5 class="timer display-4 fw-bold m-0" data-to="5120" data-speed="8000">5120</h5>
+            </div>
+            <p class="counter-description">Happy Patients</p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="counter-info text-center">
+            <div
+              class="counter-number text-primary-500 display-2 fw-semibold d-flex align-items-center justify-content-center">
+              <span class="counter-prefix">+</span>
+              <h5 class="timer display-4 fw-bold m-0" data-to="5120" data-speed="8000">26</h5>
+            </div>
+            <p class="counter-description">Total Branches</p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="counter-info text-center">
+            <div
+              class="counter-number text-primary-500 display-2 fw-semibold d-flex align-items-center justify-content-center">
+              <span class="counter-prefix">+</span>
+              <h5 class="timer display-4 fw-bold m-0" data-to="5120" data-speed="8000">53</h5>
+            </div>
+            <p class="counter-description">Senior Doctors</p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="counter-info text-center">
+            <div
+              class="counter-number text-primary-500 display-2 fw-semibold d-flex align-items-center justify-content-center">
+              <span class="counter-prefix">+</span>
+              <h5 class="timer display-4 fw-bold m-0" data-to="5120" data-speed="8000">10</h5>
+            </div>
+            <p class="counter-description">Years Experience</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="subscribe" class="d-flex align-items-center"
+    style="background-image: url(images/subscribe-bg.jpg); background-repeat: no-repeat;background-size: cover; height: 444px;">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="subscribe-content">
+          <div class="row align-items-center">
+            <div class="col-lg-6 col-md-12 col-sm-12">
+              <div class="subscribe-header content-light mb-5">
+                <span class="text-light text-uppercase">Our newsletter</span>
+                <h3 class="display-3 fw-semibold text-light mt-3">Subscribe Us To Get More Updates</h3>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12">
+              <form id="form" class="d-flex flex-wrap position-relative">
+                <input type="text" name="email" placeholder="Your Email Addresss"
+                  class="border-radius-35 text-light ps-4 outline-transparent">
+                <button
+                  class="btn btn-light btn-subscribe btn-pill position-absolute fw-medium text-uppercase">Subscribe</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="footer" class="overflow-hidden padding-large pb-0">
+    <div class="container">
+      <div class="row d-flex flex-wrap justify-content-between">
+        <div class="col-lg-4 col-md-6 col-sm-6 pb-3">
+          <div class="footer-menu">
+            <img src="images/main-logo.png" alt="logo" class="pb-3">
+            <p>Elit adipi massa diam in dignissim. Sagittis pulvinar ut dis venenatis nunc nunc.</p>
+            <div class="contact-item">
+              <p>
+                <svg class="location primary-color" width="25" height="25">
+                  <use xlink:href="#location"></use>
+                </svg>
+                <span>123 Arling, Miola, NY</span>
+              </p>
+              <p>
+                <svg class="email primary-color" width="25" height="25">
+                  <use xlink:href="#email"></use>
+                </svg>
+                <a href="mailto:">Info@yourinfo.com</a>
+              </p>
+              <p>
+                <svg class="phone primary-color" width="25" height="25">
+                  <use xlink:href="#phone"></use>
+                </svg>
+                <span>(+487) 384 9452</span>
+              </p>
+              <ul class="social-links list-unstyled d-flex mt-3">
+                <li>
+                  <a href="#">
+                    <svg class="facebook text-primary-500 me-3" width="25" height="25">
+                      <use xlink:href="#facebook"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <svg class="twitter text-primary-500 me-3" width="25" height="25">
+                      <use xlink:href="#twitter"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <svg class="instagram text-primary-500 me-3" width="25" height="25">
+                      <use xlink:href="#instagram"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <svg class="youtube text-primary-500 me-3" width="25" height="25">
+                      <use xlink:href="#youtube"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <svg class="linkedin text-primary-500" width="25" height="25">
+                      <use xlink:href="#linkedin"></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-6 pb-3">
+          <div class="footer-menu">
+            <h5 class="widget-title pb-2 fw-semibold">Quick Links</h5>
+            <ul class="menu-list list-unstyled">
+              <li class="pb-2">
+                <a href="#intro">Home</a>
+              </li>
+              <li class="pb-2">
+                <a href="#about-us">About</a>
+              </li>
+              <li class="pb-2">
+                <a href="#our-services">Services</a>
+              </li>
+              <li class="pb-2">
+                <a href="#book-appointment">Booking</a>
+              </li>
+              <li class="pb-2">
+                <a href="#testimonial">Testimonial</a>
+              </li>
+              <li class="pb-2">
+                <a href="#our-team">Our Team</a>
+              </li>
+              <li class="pb-2">
+                <a href="#faqs">Faqs</a>
+              </li>
+              <li class="pb-2">
+                <a href="#department">Department</a>
+              </li>
+              <li class="pb-2">
+                <a href="#latest-blog">Blog</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-6 pb-3">
+          <div class="footer-menu">
+            <h5 class="widget-title fw-semibold">Opening Hours</h5>
+            <table class="schedule">
+              <tr class="d-flex justify-content-between border-bottom py-2">
+                <td>Monday - Thursday</td>
+                <td class="text-primary">8:00 am - 6:00 pm</td>
+              </tr>
+              <tr class="d-flex justify-content-between border-bottom py-2">
+                <td>Friday - Saturday</td>
+                <td class="text-primary">10:00 am - 4:00 pm</td>
+              </tr>
+              <tr class="d-flex justify-content-between border-bottom py-2">
+                <td>Sunday</td>
+                <td class="text-primary">Emergency only</td>
+              </tr>
+              <tr class="d-flex justify-content-between border-bottom py-2">
+                <td>Personal</td>
+                <td class="text-primary">7:00 pm - 9:00 pm</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="d-md-flex text-center justify-content-between border-top mt-5 py-4">
+        <p>© 2025 Medicare - All rights reserved</p>
+        <p>HTML Templates by: <a href="https://templatesjungle.com/" target="_blank" class="fw-semibold">
+            TemplatesJungle</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/jquery-1.11.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="js/plugins.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+</body>
+
 </html>
