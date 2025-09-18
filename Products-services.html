@@ -16,6 +16,9 @@
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 
+  <!-- Products CDN -->
+  <link rel='stylesheet' id='digital_elevator-main-style-css' href='https://thedigitalelevator.com/wp-content/themes/digital-elevator/assets/css/main.min.css?ver=1.0.22' media='all' />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -131,7 +134,7 @@
 
   <!-- NAVBAR -->
   <header id="header">
-    <nav class="header-top py-4">
+    <nav class="header-top py-4 bg-light">
       <div class="container">
         <div class="row justify-content-between align-items-center">
           <div class="col-lg-5 col-md-4 col-sm-6">
@@ -148,7 +151,7 @@
       </div>
     </nav>
 
-    <nav id="primary-header" nav class="navbar navbar-expand-lg shadow-none" aria-label="navbar" height="30">
+    <nav id="primary-header" nav class="navbar navbar-expand-lg shadow-none bg-light" aria-label="navbar" height="30">
       <div class="container">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-primary"
           aria-controls="navbar-primary" aria-expanded="false" aria-label="Toggle navigation">
@@ -199,6 +202,73 @@
     </div>
   </section>
   
+  <!-- PRODUCTS -->
+  <section class="horizontal-accordion bg-light padding-medium">
+    <div class="container">
+      <!-- Heading -->
+      <div class="row justify-content-center mb-5">
+        <div class="col-md-7 site-section-heading text-center pt-4">
+          <h2 class="display-6 fw-bold text-primary-blue">PRODUCTS</h2>
+        </div>
+      </div>
+
+      <div class="accordion-list">
+        <div class="accordion-card bg-primary">
+          <div class="accordion-card-header" onclick="toggleAccordion(this)">
+            <div class="accordion-card__icon">
+              <img width="70" height="70" src="https://thedigitalelevator.com/wp-content/uploads/2024/05/bacteria_12530568-1.svg" class="attachment-full size-full" alt="" decoding="async" />                            
+            </div>
+            <div class="accordion-card__content">
+              <h3 class="accordion-card__title fw-bold text-primary">One-off Audits</h3>
+              <p class="accordion-card__description text-para">
+                We’ll go deep into a content audit or competitive analysis and give you the best course of action to improve your SEO.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-card__background">
+            <img width="355" height="500" src="https://thedigitalelevator.com/wp-content/uploads/2024/05/3d-render-abstract-medical-background-with-low-poly-virus-cells-particle-design-3.png" class="attachment-full size-full" alt="" decoding="async" srcset="https://thedigitalelevator.com/wp-content/uploads/2024/05/3d-render-abstract-medical-background-with-low-poly-virus-cells-particle-design-3.png 355w, https://thedigitalelevator.com/wp-content/uploads/2024/05/3d-render-abstract-medical-background-with-low-poly-virus-cells-particle-design-3-213x300.png 213w" sizes="(max-width: 355px) 100vw, 355px" />                        
+          </div>
+        </div>
+
+        <div class="accordion-card bg-primary">
+          <div class="accordion-card-header" onclick="toggleAccordion(this)">
+            <div class="accordion-card__icon">
+              <img width="70" height="70" src="https://thedigitalelevator.com/wp-content/uploads/2024/05/acc-01.svg" class="attachment-full size-full" alt="" decoding="async" />                            
+            </div>
+            <div class="accordion-card__content">
+              <h3 class="accordion-card__title fw-bold text-light">Ongoing Content Marketing</h3>
+              <p class="accordion-card__description text-para">
+                We’ll provide the strategy, research, and implementation of your most important content marketing and report on the performance.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-card__background">
+            <img width="467" height="445" src="https://thedigitalelevator.com/wp-content/uploads/2024/05/3d-render-abstract-medical-background-with-low-poly-virus-cells-particle-design-1.png" class="attachment-full size-full" alt="" decoding="async" srcset="https://thedigitalelevator.com/wp-content/uploads/2024/05/3d-render-abstract-medical-background-with-low-poly-virus-cells-particle-design-1.png 467w, https://thedigitalelevator.com/wp-content/uploads/2024/05/3d-render-abstract-medical-background-with-low-poly-virus-cells-particle-design-1-300x286.png 300w" sizes="(max-width: 467px) 100vw, 467px" />                        
+          </div>
+        </div>
+
+        <div class="accordion-card bg-primary">
+          <div class="accordion-card-header" onclick="toggleAccordion(this)">
+            <div class="text-primary-blue">
+              <img width="70" height="70" src="https://thedigitalelevator.com/wp-content/uploads/2024/05/smart-farm_12530354-1-1.svg" class="attachment-full size-full" alt="" decoding="async" />                           
+            </div>
+            <div class="accordion-card__content">
+              <h3 class="accordion-card__title fw-bold text-primary">Content Consulting</h3> <br>
+              <p class="accordion-card__description text-para">
+                We’ll have one of our content experts work with your in-house content team to make sure they are building a content machine based on a sound strategy.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-card__background">
+            <img width="535" height="500" src="https://thedigitalelevator.com/wp-content/uploads/2024/05/3d-render-abstract-medical-background-with-low-poly-virus-cells-particle-design-2.png" class="attachment-full size-full" alt="" decoding="async" 
+            srcset="https://thedigitalelevator.com/wp-content/uploads/2024/05/3d-render-abstract-medical-background-with-low-poly-virus-cells-particle-design-2.png 535w, https://thedigitalelevator.com/wp-content/uploads/2024/05/3d-render-abstract-medical-background-with-low-poly-virus-cells-particle-design-2-300x280.png 300w" sizes="(max-width: 535px) 100vw, 535px" />                        
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- FOOTER -->
   <footer id="footer" class="overflow-hidden bg-primary padding-medium pb-0">
     <div class="container justify-content-between">
@@ -276,6 +346,9 @@
     </div>
   </footer>
   
+  <!-- Products CDN -->
+  <script src="https://thedigitalelevator.com/wp-content/themes/digital-elevator/assets/js/main.min.js?ver=1.0.22" id="digital_elevator-main-scripts-js"></script>
+
   <script src="js/jquery-1.11.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
