@@ -77,8 +77,6 @@ CSS STRUCTURE:
   --swiper-theme-color: #111 !important;
   --cadet-blue-color: #4c83c2;
   --cadet-gray-color: #bac2c4;
-
-  --gradient-hero: linear-gradient(135deg, rgba(37, 99, 235, 0.9) 0%, rgba(20, 184, 166, 0.8) 100%);
 }
 
 /* on mobile devices below 600px
@@ -230,8 +228,9 @@ strong {
   background-color: var(--bs-primary-rgb) !important;
 }
 
-.about-products .heading{
-  background-color: var(--gradient-hero);
+.gradient-bg {
+  background: linear-gradient(90deg, #b6022e 0%, #093074 100%);
+  padding: 40px 0;
 }
 
 /* 2.4 Border Radius
