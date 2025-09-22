@@ -3,137 +3,111 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>High Performance Dry Ice Bucket</title>
-  <!-- Bootstrap CSS -->
+  <title>Team Section</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <style>
-    .gradient-bg {
-      background: linear-gradient(90deg, #b6022e 0%, #093074 100%);
-      padding: 40px 0;
-    }
-    .bucket-img {
-      max-width: 250px;
-      margin: 0 auto;
-      display: block;
-    }
-    .card-section {
-      margin-top: -80px;
+    .team-card {
+      position: relative;
+      overflow: hidden;
+      border: 2px solid #000;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-      padding: 30px;
-    }
-    ul.custom-list li::marker {
-      color: #b6022e;
-    }
-    .table thead {
-      background-color: #093074;
-      color: #fff;
-    }
-    .table-bordered td, 
-    .table-bordered th {
-      vertical-align: middle;
       text-align: center;
+      padding: 20px;
+      height: 250px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.3s ease-in-out;
+    }
+    .team-card:hover {
+      transform: scale(1.05);
+    }
+    .team-card .overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(9, 48, 116, 0.9);
+      color: #fff;
+      transform: translateY(100%);
+      transition: transform 0.3s ease-in-out;
+      padding: 15px;
+      font-size: 14px;
+    }
+    .team-card:hover .overlay {
+      transform: translateY(0);
+    }
+    .team-icon {
+      font-size: 50px;
+      color: #093074;
+    }
+    .team-title {
+      font-weight: bold;
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
+  <div class="container py-5">
+    <div class="row g-3">
+      
+      <!-- About our team -->
+      <div class="col-lg-3 col-md-6">
+        <div class="team-card">
+          <div>
+            <p>...........................</p>
+            <p><em>About our team</em></p>
+          </div>
+        </div>
+      </div>
 
-  <!-- Top Banner with Image -->
-  <section class="gradient-bg text-center">
-    <img src="https://via.placeholder.com/250x400?text=Product+Image" alt="Dry Ice Bucket" class="bucket-img img-fluid">
-  </section>
+      <!-- Icon 1 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="team-card">
+          <i class="fa-solid fa-user team-icon"></i>
+          <div class="overlay">
+            <h6>Name: John Doe</h6>
+            <p>Expert in Biotech research with 10+ years of experience.</p>
+          </div>
+        </div>
+      </div>
 
-  <!-- Content Section -->
-  <section class="container card-section bg-white">
-    <h2 class="fw-bold">High Performance Dry ice Bucket</h2>
+      <!-- Icon 2 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="team-card">
+          <i class="fa-solid fa-user-tie team-icon"></i>
+          <div class="overlay">
+            <h6>Name: Jane Smith</h6>
+            <p>Leading operations and clinical strategy for company growth.</p>
+          </div>
+        </div>
+      </div>
 
-    <!-- Overview -->
-    <h5 class="mt-4 fw-bold">Overview</h5>
-    <p>
-      The NovaCellBio High Performance Dry Ice Bucket is a specialized laboratory-grade storage solution 
-      designed to safely and efficiently conserve dry ice and other ultra-low temperature materials. 
-      Engineered for professional scientific, medical, and research applications, this durable container ensures 
-      optimal performance, reduced wastage, and user safety.
-    </p>
+      <!-- Icon 3 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="team-card">
+          <i class="fa-solid fa-user-doctor team-icon"></i>
+          <div class="overlay">
+            <h6>Name: Dr. Alex</h6>
+            <p>Specialist in medical diagnostics and innovative therapies.</p>
+          </div>
+        </div>
+      </div>
 
-    <!-- Key Features -->
-    <h5 class="mt-4 fw-bold">Key Features</h5>
-    
-    <h6 class="fw-semibold">Superior Insulation Technology</h6>
-    <p>
-      The NovaCellBio bucket features advanced multi-layer insulation construction that provides exceptional 
-      cryogenic performance. Its innovative design enables maintaining low temperatures for extended periods, 
-      significantly reducing dry ice sublimation rates and preserving truly valuable samples.
-    </p>
+      <!-- Description box -->
+      <div class="col-lg-3 col-md-6">
+        <div class="team-card">
+          <div>
+            <h6><em>Description</em></h6>
+            <p>.........................</p>
+            <p>.........................</p>
+            <p>.........................</p>
+          </div>
+        </div>
+      </div>
 
-    <h6 class="fw-semibold">Chemical-Resistant Construction</h6>
-    <p>
-      Manufactured from high-grade materials with superior chemical resistance, this bucket is compatible not 
-      only with dry ice but also with various laboratory solutions including:
-    </p>
-    <ul class="custom-list">
-      <li>Safe flammable materials</li>
-      <li>Acidic solutions</li>
-      <li>Alkaline solutions</li>
-      <li>Other cryogenic materials</li>
-    </ul>
-
-    <h6 class="fw-semibold">High-Performance Design</h6>
-    <ul class="custom-list">
-      <li>Non-woven design prevents condensation buildup on the outer surface</li>
-      <li>Ergonomically designed for ease of handling and storage</li>
-      <li>Specialized system ensures maximum retention and minimizes sublimation loss</li>
-    </ul>
-
-    <!-- Technical Specifications -->
-    <h5 class="mt-4 fw-bold">Technical Specifications</h5>
-    <div class="table-responsive">
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th>Model</th>
-            <th>Temperature Range</th>
-            <th>Internal Volume</th>
-            <th>External Dimension</th>
-            <th>Net Weight</th>
-            <th>Full Load Weight</th>
-            <th>Endurance Time</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>NAV-DURAB1</td>
-            <td>-80 ~ -70℃</td>
-            <td>12L</td>
-            <td>325×320×470mm</td>
-            <td>7.5kg</td>
-            <td>15kg</td>
-            <td>≥120hrs</td>
-          </tr>
-          <tr>
-            <td>NAV-DURAB2</td>
-            <td>-80 ~ -70℃</td>
-            <td>31L</td>
-            <td>325×450×630mm</td>
-            <td>14kg</td>
-            <td>25kg</td>
-            <td>≥250hrs</td>
-          </tr>
-          <tr>
-            <td>NAV-DURAB3</td>
-            <td>-80 ~ -70℃</td>
-            <td>46L</td>
-            <td>325×550×750mm</td>
-            <td>21kg</td>
-            <td>35kg</td>
-            <td>≥300hrs</td>
-          </tr>
-        </tbody>
-      </table>
     </div>
-  </section>
-
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </div>
 </body>
 </html>

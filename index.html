@@ -37,7 +37,7 @@
     </symbol>
     <symbol xmlns="http://www.w3.org/2000/svg" id="location" viewBox="0 0 512 512">
       <circle cx="256" cy="192" r="32" fill="currentColor" />
-      <path fill="currentColor"
+      <path fill="gradient-color"
         d="M256 32c-88.22 0-160 68.65-160 153c0 40.17 18.31 93.59 54.42 158.78c29 52.34 62.55 99.67 80 123.22a31.75 31.75 0 0 0 51.22 0c17.42-23.55 51-70.88 80-123.22C397.69 278.61 416 225.19 416 185c0-84.35-71.78-153-160-153Zm0 224a64 64 0 1 1 64-64a64.07 64.07 0 0 1-64 64Z" />
     </symbol>
     <symbol xmlns="http://www.w3.org/2000/svg" id="phone" viewBox="0 0 24 24">
@@ -132,67 +132,58 @@
 
   <!-- NAVBAR -->
   <header id="header">
-    <nav class="header-top py-4">
+    <nav class="navbar navbar-expand-lg shadow-none py-3">
       <div class="container">
-        <div class="row justify-content-between align-items-center">
-          <div class="col-lg-5 col-md-4 col-sm-6">
-            <a class="navbar-brand" href="index.html">
-              <img src="./asserts/logo.png" class="logo">
-            </a>
-          </div>
-          <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="btn-book text-end">
-              <a href="booking.html" class="btn btn-medium btn-outline-primary btn-pill text-uppercase">Reach Us</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
+        
+        <!-- Logo -->
+        <a class="navbar-brand" href="index.html">
+          <img src="./asserts/logo.png" class="logo" alt="Logo">
+        </a>
 
-    <nav id="primary-header" nav class="navbar navbar-expand-lg shadow-none" aria-label="navbar" height="30">
-      <div class="container">
+        <!-- Mobile Toggler -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-primary"
           aria-controls="navbar-primary" aria-expanded="false" aria-label="Toggle navigation">
-          <svg class="navbar-icon mt-4 primary-color-500 bg-light" width="40" height="50">
+          <svg class="navbar-icon primary-color-500 bg-light" width="40" height="50">
             <use xlink:href="#navbar-icon"></use>
           </svg>
         </button>
-        <div class="header-bottom collapse navbar-collapse bg-light border-radius-20 py-2 fw-bold" id="navbar-primary">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item ps-4 pe-4 border-right">
-              <a class="nav-link text-dark bold active p-0 mt-3 mt-lg-0" aria-current="page" href="./index.html">Home</a>
+
+        <!-- Navbar Items -->
+        <div class="collapse navbar-collapse justify-content-end py-2 fw-bold" id="navbar-primary">
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item ps-4 pe-4 border-end">
+              <a class="nav-link text-primary-blue bold active p-0 mt-2 mt-lg-0" aria-current="page" href="./index.html">Home</a>
             </li>
-            <li class="nav-item ps-4 pe-4 border-right">
-              <a class="nav-link text-dark p-0" href="./about-us.html">About Us</a>
+            <li class="nav-item ps-4 pe-4 border-end">
+              <a class="nav-link text-primary-blue p-0" href="./about-us.html">About</a>
             </li>
-            <li class="nav-item ps-4 pe-4 border-right">
-              <a class="nav-link text-dark p-0" href="./Products-services.html">Products / Services</a>
+            <li class="nav-item ps-4 pe-4 border-end">
+              <a class="nav-link text-primary-blue p-0" href="./Products-services.html">Services</a>
             </li>
-            <li class="nav-item ps-4 pe-4 border-right">
-              <a class="nav-link text-dark p-0" href="./r&d.html">R & D</a>
+            <li class="nav-item ps-4 pe-4 border-end">
+              <a class="nav-link text-primary-blue p-0" href="./investments.html">Investments</a>
             </li>
-            <li class="nav-item ps-4 pe-4 border-right">
-              <a class="nav-link text-dark p-0" href="./investments.html">Investments</a>
+            <li class="nav-item ps-4 pe-4 border-end">
+              <a class="nav-link text-primary-blue p-0" href="./careers.html">Careers</a>
             </li>
-            <li class="nav-item ps-4 pe-4 border-right">
-              <a class="nav-link text-dark p-0" href="./careers.html">Careers</a>
-            </li>
-            <li class="nav-item ps-4 pe-4 border-right">
-              <a class="nav-link text-dark p-0" href="./blogs.html">Blogs</a>
+            <li class="nav-item ps-4 pe-4 border-end">
+              <a class="nav-link text-primary-blue p-0" href="./blogs.html">Blogs</a>
             </li>
             <li class="nav-item ps-4 pe-4">
-              <a class="nav-link text-dark p-0" href="./contact-us.html">Contact Us</a>
+              <a class="nav-link text-primary-blue p-0" href="./contact-us.html">Contact</a>
             </li>
           </ul>
         </div>
+
       </div>
     </nav>
   </header>
 
+
   <!-- BANNER -->
   <section id="intro" class="position-relative overflow-hidden">
     <div class="banner">
-      <img src="./asserts/images/banner.jpg" alt="banner" class="img-fluid">
+      <img src="./asserts/images/banner.jpg" alt="banner" class="img-fluid" style="weight:100%; height:500px">
       <!-- Overlay -->
       <div class="overlay position-absolute top-0 start-0 w-100 h-100 bg-primary" style="opacity: 0.8;"></div>
 
@@ -201,7 +192,6 @@
           <h1 class="display-3 fw-bold">Innovating Biologics & Biosimilars for a Healthier World</h1>
           <p class="mt-4 mb-4 text-white">At ABS Novacell Biopharmaceuticals, we are committed to delivering quality, affordable and innovative biologics, vaccines and biosimilars to address unmet medical needs for humans and animals worldwide.</p>
           <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
-            <a href="./about-us.html" class="btn btn-medium btn-banner btn-pill text-uppercase fw-bold">Our Mission</a>
             <a href="./Products-services.html" class="btn btn-medium btn-banner btn-pill text-uppercase fw-bold">Products</a>
             <a href="./investments.html" class="btn btn-medium btn-banner btn-pill text-uppercase fw-bold">Investments</a>
           </div>
@@ -236,7 +226,7 @@
         <div class="col-lg-6">
           <div class="row g-3">
             <div class="col-12">
-              <div class="p-4 bg-primary border-radius-20">
+              <div class="p-4 border-radius-20" style="background:linear-gradient(90deg, #b6022e 0%, #093074 100%);">
                 <h6 class="fw-bold mt-2 text-primary">OUR MISSION</h6>
                 <p class="text-para">
                   Our mission is to become a leading global biopharma company by delivering quality, affordable biologics and biosimilars to alleviate human and animal suffering.
@@ -244,7 +234,7 @@
               </div>
             </div>
             <div class="col-12">
-              <div class="p-4 bg-primary border-radius-20">
+              <div class="p-4 border-radius-20" style="background:linear-gradient(90deg, #b6022e 0%, #093074 100%);">
                 <h6 class="fw-bold mt-2">OUR VISION</h6>
                 <p class="text-para">
                   Our vision is to build an innovative biopharmaceutical business in India, leveraging global expertise and novel biologics to emerge as unmatched leaders worldwide. 
@@ -274,56 +264,56 @@
       <div class="row justify-content-center">
         
         <div class="col-lg-3 col-md-6 pb-3">
-          <div class="icon-box p-4 bg-light border-radius-10 text-center shadow-sm" style="height: 300px;">
+          <div class="icon-box p-4 bg-light border-radius-10 border border-2 border-danger text-center shadow-sm" style="height: 300px;">
             <div class="icon-box-icon">
               <svg class="vaccines mt-3 primary-color-500" width="50" height="50">
                 <use xlink:href="#vaccines" />
               </svg>
             </div>
             <div class="icon-box-content">
-              <h3 class="card-title py-2"> Vaccines</h3>
+              <h3 class="card-title py-2 text-danger fw-bold text-uppercase"> Vaccines</h3>
               <p>Vaccines for veterinary and humans to address key diseases affecting animals and people, ensuring effective protection and health safety.</p>
             </div>
           </div>
         </div>
 
         <div class="col-lg-3 col-md-6 pb-3">
-          <div class="icon-box p-4 bg-light border-radius-10 text-center shadow-sm" style="height: 300px;">
+          <div class="icon-box p-4 bg-light border-radius-10 border border-2 border-danger text-center shadow-sm" style="height: 300px;">
             <div class="icon-box-icon">
               <svg class="biosimilars mt-3 primary-color-500" width="50" height="50">
                 <use xlink:href="#biosimilars" />
               </svg>
             </div>
             <div class="icon-box-content">
-              <h3 class="card-title py-2">Biosimilars</h3>
+              <h3 class="card-title py-2 text-danger fw-bold text-uppercase">Biosimilars</h3>
               <p>Biological medicine highly similar to an already approved biological reference medicine with no clinically meaningful differences in safety, purity and potency.</p>
             </div>
           </div>
         </div>
 
         <div class="col-lg-3 col-md-6 pb-3">
-          <div class="icon-box p-4 bg-light border-radius-10 text-center shadow-sm" style="height: 300px;">
+          <div class="icon-box p-4 bg-light border-radius-10 border border-2 border-danger text-center shadow-sm" style="height: 300px;">
             <div class="icon-box-icon">
               <svg class="diagnostic-kits mt-3 primary-color-500" width="50" height="50">
                 <use xlink:href="#diagnostic-kits" />
               </svg>
             </div>
             <div class="icon-box-content">
-              <h3 class="card-title py-2">Diagnostic Kits</h3>
+              <h3 class="card-title py-2 text-danger fw-bold text-uppercase">Diagnostic Kits</h3>
               <p>Essential tools used for the accurate detection and diagnosis of diseases in clinical and laboratory settings.</p>
             </div>
           </div>
         </div>
 
         <div class="col-lg-3 col-md-6 pb-3">
-          <div class="icon-box p-4 bg-light border-radius-10 text-center shadow-sm" style="height: 300px;">
+          <div class="icon-box p-4 bg-light border-radius-10 border border-2 border-danger text-center shadow-sm" style="height: 300px;">
             <div class="icon-box-icon">
               <svg class="generics mt-3 primary-color-500" width="50" height="50">
                 <use xlink:href="#generics" />
               </svg>
             </div>
             <div class="icon-box-content">
-              <h3 class="card-title py-2">Generics</h3>
+              <h3 class="card-title py-2 text-danger fw-bold text-uppercase">Generics</h3>
               <p>Cost-effective pharmaceutical drugs that are therapeutically equivalent to brand-name medicines, providing the same safety and efficacy at a lower price.</p>
             </div>
           </div>
@@ -408,7 +398,7 @@
   </section> -->
 
   <!-- BLOGS -->
-  <section id="latest-blog" class="padding-medium">
+  <!-- <section id="latest-blog" class="padding-medium">
     <div class="container">
       <div class="row">
         <div class="display-header">
@@ -476,16 +466,15 @@
             </div>
           </div>
         </div>
-        <!-- Button -->
         <div class="text-center">
           <a href="./blogs.html" class="btn btn-medium btn-primary btn-pill">Read More Blogs</a>
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- COUNTING -->
-  <section id="about-us" class="bg-primary pt-0">
+  <section id="about-us" class="pt-0" style="background:linear-gradient(90deg, #b6022e 0%, #093074 100%);">
     <div class="container">
       <div class="row padding-medium">
 

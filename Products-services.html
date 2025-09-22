@@ -55,59 +55,49 @@
 
   <!-- NAVBAR -->
   <header id="header">
-    <nav class="header-top py-4">
+    <nav class="navbar navbar-expand-lg shadow-none py-3">
       <div class="container">
-        <div class="row justify-content-between align-items-center">
-          <div class="col-lg-5 col-md-4 col-sm-6">
-            <a class="navbar-brand" href="index.html">
-              <img src="./asserts/logo.png" class="logo">
-            </a>
-          </div>
-          <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="btn-book text-end">
-              <a href="booking.html" class="btn btn-medium btn-outline-primary btn-pill text-uppercase">Reach Us</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
+        
+        <!-- Logo -->
+        <a class="navbar-brand" href="index.html">
+          <img src="./asserts/logo.png" class="logo" alt="Logo">
+        </a>
 
-    <nav id="primary-header" nav class="navbar navbar-expand-lg shadow-none" aria-label="navbar" height="30">
-      <div class="container">
+        <!-- Mobile Toggler -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-primary"
           aria-controls="navbar-primary" aria-expanded="false" aria-label="Toggle navigation">
-          <svg class="navbar-icon mt-4 primary-color-500 bg-light" width="40" height="50">
+          <svg class="navbar-icon primary-color-500 bg-light" width="40" height="50">
             <use xlink:href="#navbar-icon"></use>
           </svg>
         </button>
-        <div class="header-bottom collapse navbar-collapse bg-light border-radius-20 py-2 fw-bold" id="navbar-primary">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item ps-4 pe-4 border-right">
-              <a class="nav-link text-dark p-0" href="./index.html">Home</a>
+
+        <!-- Navbar Items -->
+        <div class="collapse navbar-collapse justify-content-end py-2 fw-bold" id="navbar-primary">
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item ps-4 pe-4 border-end">
+              <a class="nav-link text-primary-blue p-0" aria-current="page" href="./index.html">Home</a>
             </li>
-            <li class="nav-item ps-4 pe-4 border-right">
-              <a class="nav-link text-dark p-0" href="./about-us.html">About Us</a>
+            <li class="nav-item ps-4 pe-4 border-end">
+              <a class="nav-link text-primary-blue p-0" href="./about-us.html">About</a>
             </li>
-            <li class="nav-item ps-4 pe-4 border-right">
-              <a class="nav-link text-dark bold active p-0 mt-3 mt-lg-0" aria-current="page" href="./Products-services.html">Products / Services</a>
+            <li class="nav-item ps-4 pe-4 border-end">
+              <a class="nav-link text-primary-blue bold active p-0 mt-2 mt-lg-0" aria-current="page" href="./Products-services.html">Services</a>
             </li>
-            <li class="nav-item ps-4 pe-4 border-right">
-              <a class="nav-link text-dark p-0" href="./r&d.html">R & D</a>
+            <li class="nav-item ps-4 pe-4 border-end">
+              <a class="nav-link text-primary-blue p-0" href="./investments.html">Investments</a>
             </li>
-            <li class="nav-item ps-4 pe-4 border-right">
-              <a class="nav-link text-dark p-0" href="./investments.html">Investments</a>
+            <li class="nav-item ps-4 pe-4 border-end">
+              <a class="nav-link text-primary-blue p-0" href="./careers.html">Careers</a>
             </li>
-            <li class="nav-item ps-4 pe-4 border-right">
-              <a class="nav-link text-dark p-0" href="./careers.html">Careers</a>
-            </li>
-            <li class="nav-item ps-4 pe-4 border-right">
-              <a class="nav-link text-dark p-0" href="./blogs.html">Blogs</a>
+            <li class="nav-item ps-4 pe-4 border-end">
+              <a class="nav-link text-primary-blue p-0" href="./blogs.html">Blogs</a>
             </li>
             <li class="nav-item ps-4 pe-4">
-              <a class="nav-link text-dark p-0" href="./contact-us.html">Contact Us</a>
+              <a class="nav-link text-primary-blue p-0" href="./contact-us.html">Contact</a>
             </li>
           </ul>
         </div>
+
       </div>
     </nav>
   </header>
@@ -115,10 +105,36 @@
   <!-- BANNER -->
   <section id="intro" style="background:linear-gradient(90deg, #b6022e 0%, #093074 100%);">
     <div class="container">
-      <div class="banner-content padding-large text-primary">
+      <div class="banner-content padding-medium text-primary">
         <h1 class="display-3 fw-bold">Products / Services</h1>
         <span class="item"><a href="index.html" class="text-primary">Home</a></span> &nbsp; <span class="">/</span> &nbsp; <span
           class=" item">Products-Services</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRODUCTION -->
+  <section class="products-intro padding-small">
+    <div class="container my-5">
+      <div class="display-header mb-5">
+        <h2 class="display-5 text-center fw-bold text-primary-blue">Our Core expertise in <br> Products & services model :</h2>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-12 col-md-10">
+          <div class="card shadow-lg border-0 rounded-4">
+            <div class="card-body p-5">
+              <p class="card-text text-muted fs-5">
+                ABSN provides a wide range of services under the professional management with Global
+                Multi-National Biopharmaceutical expertise and hands-on experience. 
+              </p>
+              <p class="card-text text-muted fs-5">
+                Our experience includes Quality and Regulatory guidelines in compliance with 
+                <strong>cGMP, cGLP, cGCP, ICH, USP, EP and JP</strong> in 
+                <strong>Bacterial and Viral Vaccines, r-DNA derived Proteins, and Monoclonal Antibodies.</strong>
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -140,7 +156,7 @@
                   class="img-fluid rounded fixed-img">
             </div>
             <div class="col-md-6 order-2 order-md-2">
-              <h2 class="text-primary-blue text-center">Veterinary Vaccines</h2> <br>
+              <h2 class="text-danger text-center fw-bold">Veterinary Vaccines</h2> <br>
               <p>
                 ABS Novacell Biopharmaceuticals develops veterinary vaccines that serve the needs of major livestock and companion animals, including cattle, horses, avians, fishes and household pets. These vaccines are produced using advanced biotechnological platforms such as mammalian, yeast, E. coli and insect cells, ensuring high standards of potency, safety and regulatory compliance. The company's focus on research innovation enables rapid response to emerging diseases like swine flu and bird flu, as well as the development of vaccines for seasonal threats and other critical pathogens.
               </p>
@@ -151,7 +167,7 @@
         <div class="container my-5">
           <div class="row align-items-center">
             <div class="col-md-6 order-2 order-md-1">
-              <h2 class="text-primary-blue text-center">Human Vaccines</h2> <br>
+              <h2 class="text-danger text-center fw-bold">Human Vaccines</h2> <br>
               <p>
                 ABS Novacell Biopharmaceuticals is pioneering the development of human vaccines that utilize animal stem cells as a platform for both production and innovation. These vaccines are designed to address serious infectious diseases by leveraging the unique biological properties of animal-derived stem cells, which enable scalable manufacturing, advanced antigen presentation and enhanced immune response. The company’s approach incorporates state-of-the-art R&D and proprietary cell line technologies, focusing on global health threats such as pandemic and seasonal flu, as well as emerging viruses.
               </p>
@@ -168,7 +184,7 @@
               <img src="./asserts/images/pro3.jpg" class="img-fluid rounded" alt="Example Image" style="width: 450px; height: 350px;">
             </div>
             <div class="col-md-6 order-2 order-md-2">
-              <h2 class="text-primary-blue text-center">Stem Cells</h2> <br>
+              <h2 class="text-danger text-center fw-bold">Stem Cells</h2> <br>
               <p>
                 Stem cells are unique biological cells with the ability to self-renew and differentiate into various specialized cell types, making them essential for regenerative medicine and biotechnology applications.
                 In vaccine development and therapeutics, animal stem cells serve as versatile platforms enabling large-scale production of vaccines and biologics with enhanced immune response properties. They provide a sustainable and scalable source for generating cells and proteins necessary for immunization, supporting more efficient and rapid vaccine development. 
@@ -180,7 +196,7 @@
         <div class="container my-5">
           <div class="row align-items-center">
             <div class="col-md-6 order-2 order-md-1">
-              <h2 class="text-primary-blue text-center">Diagnostic kits</h2> <br>
+              <h2 class="text-danger text-center fw-bold">Diagnostic kits</h2> <br>
               <p>
                 Diagnostic kits are specialized medical tools designed to detect, diagnose and monitor diseases and health conditions by analyzing biological samples such as blood, urine, saliva, or swabs. These kits contain reagents and instructions to facilitate accurate testing, enabling healthcare providers to confirm disease presence, predict disease risk and guide treatment decisions. Diagnostic kits serve various purposes including identifying infectious agents, genetic abnormalities and biomarkers related to chronic diseases. The rise of at-home diagnostic kits has empowered individuals to conveniently perform health tests with rapid results, improving access to timely medical insights.
               </p>
@@ -197,7 +213,7 @@
               <img src="./asserts/images/pro5.jpg" class="img-fluid rounded" alt="Example Image" style="width: 450px; height: 350px;">
             </div>
             <div class="col-md-6 order-2 order-md-2">
-              <h2 class="text-primary-blue text-center">Generics</h2> <br>
+              <h2 class="text-danger text-center fw-bold">Generics</h2> <br>
               <p>
                 They provide a cost-effective alternative by making essential medications more accessible without compromising on quality, efficacy, or safety. Generic drugs undergo rigorous regulatory scrutiny to ensure they meet the same standards as branded medicines, including bioequivalence in absorption and action. 
                 Their availability promotes competition, reduces healthcare costs and increases treatment options for patients worldwide. Through generics, healthcare systems can allocate resources more efficiently, enabling wider access to vital therapies while maintaining high standards of patient care.
@@ -209,7 +225,7 @@
         <div class="container my-5">
           <div class="row align-items-center">
             <div class="col-md-6 order-2 order-md-1">
-              <h2 class="text-primary-blue text-center">Sheep derived biodrugs (Surfactants) and Milk Proteins</h2> <br>
+              <h2 class="text-danger text-center fw-bold">Sheep derived biodrugs (Surfactants) and Milk Proteins</h2> <br>
               <p>
                 Sheep-derived biodrugs, including surfactants and milk proteins, represent a specialized category of biologics developed from ovine sources. 
                 Surfactants derived from sheep enhance lung function by reducing surface tension, playing a critical role in treatments for respiratory distress and other pulmonary conditions. 

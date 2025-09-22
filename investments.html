@@ -25,6 +25,37 @@
   <!-- script
     ================================================== -->
   <script src="js/modernizr.js"></script>
+
+  <style>
+    .gradient-bg {
+      background: linear-gradient(90deg, #b6022e 0%, #093074 100%);
+      padding: 40px 0;
+    }
+    .bucket-img {
+      max-width: 250px;
+      margin: 0 auto;
+      display: block;
+    }
+    .card-section {
+      margin-top: -80px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      padding: 30px;
+    }
+    ul.custom-list li::marker {
+      color: #b6022e;
+    }
+    .table thead {
+      background-color: #093074;
+      color: #fff;
+    }
+    .table-bordered td, 
+    .table-bordered th {
+      vertical-align: middle;
+      text-align: center;
+    }
+  </style>
+
 </head>
 
 <body data-bs-spy="scroll" data-bs-target="#header-nav" tabindex="0">
@@ -131,59 +162,49 @@
 
   <!-- NAVBAR -->
   <header id="header">
-    <nav class="header-top py-4">
+    <nav class="navbar navbar-expand-lg shadow-none py-3">
       <div class="container">
-        <div class="row justify-content-between align-items-center">
-          <div class="col-lg-5 col-md-4 col-sm-6">
-            <a class="navbar-brand" href="index.html">
-              <img src="./asserts/logo.png" class="logo">
-            </a>
-          </div>
-          <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="btn-book text-end">
-              <a href="booking.html" class="btn btn-medium btn-outline-primary btn-pill text-uppercase">Reach Us</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
+        
+        <!-- Logo -->
+        <a class="navbar-brand" href="index.html">
+          <img src="./asserts/logo.png" class="logo" alt="Logo">
+        </a>
 
-    <nav id="primary-header" nav class="navbar navbar-expand-lg shadow-none" aria-label="navbar" height="30">
-      <div class="container">
+        <!-- Mobile Toggler -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-primary"
           aria-controls="navbar-primary" aria-expanded="false" aria-label="Toggle navigation">
-          <svg class="navbar-icon mt-4 primary-color-500 bg-light" width="40" height="50">
+          <svg class="navbar-icon primary-color-500 bg-light" width="40" height="50">
             <use xlink:href="#navbar-icon"></use>
           </svg>
         </button>
-        <div class="header-bottom collapse navbar-collapse bg-light border-radius-20 py-2 fw-bold" id="navbar-primary">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item ps-4 pe-4 border-right">
-              <a class="nav-link text-dark p-0" href="./index.html">Home</a>
+
+        <!-- Navbar Items -->
+        <div class="collapse navbar-collapse justify-content-end py-2 fw-bold" id="navbar-primary">
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item ps-4 pe-4 border-end">
+              <a class="nav-link text-primary-blue p-0" aria-current="page" href="./index.html">Home</a>
             </li>
-            <li class="nav-item ps-4 pe-4 border-right">
-              <a class="nav-link text-dark p-0" href="./about-us.html">About Us</a>
+            <li class="nav-item ps-4 pe-4 border-end">
+              <a class="nav-link text-primary-blue p-0" href="./about-us.html">About</a>
             </li>
-            <li class="nav-item ps-4 pe-4 border-right">
-              <a class="nav-link text-dark p-0" href="./Products-services.html">Products / Services</a>
+            <li class="nav-item ps-4 pe-4 border-end">
+              <a class="nav-link text-primary-blue p-0" href="./Products-services.html">Services</a>
             </li>
-            <li class="nav-item ps-4 pe-4 border-right">
-              <a class="nav-link text-dark p-0" href="./r&d.html">R & D</a>
+            <li class="nav-item ps-4 pe-4 border-end">
+              <a class="nav-link text-primary-blue bold active p-0 mt-2 mt-lg-0" aria-current="page" href="./investments.html">Investments</a>
             </li>
-            <li class="nav-item ps-4 pe-4 border-right">
-              <a class="nav-link text-dark bold active p-0 mt-3 mt-lg-0" aria-current="page" href="./investments.html">Investments</a>
+            <li class="nav-item ps-4 pe-4 border-end">
+              <a class="nav-link text-primary-blue p-0" href="./careers.html">Careers</a>
             </li>
-            <li class="nav-item ps-4 pe-4 border-right">
-              <a class="nav-link text-dark p-0" href="./careers.html">Careers</a>
-            </li>
-            <li class="nav-item ps-4 pe-4 border-right">
-              <a class="nav-link text-dark p-0" href="./blogs.html">Blogs</a>
+            <li class="nav-item ps-4 pe-4 border-end">
+              <a class="nav-link text-primary-blue p-0" href="./blogs.html">Blogs</a>
             </li>
             <li class="nav-item ps-4 pe-4">
-              <a class="nav-link text-dark p-0" href="./contact-us.html">Contact Us</a>
+              <a class="nav-link text-primary-blue p-0" href="./contact-us.html">Contact</a>
             </li>
           </ul>
         </div>
+
       </div>
     </nav>
   </header>
@@ -196,6 +217,129 @@
         <span class="item"><a href="index.html" class="text-primary">Home</a></span> &nbsp; <span class="">/</span> &nbsp; <span
           class=" item">Investments</span>
       </div>
+    </div>
+  </section>
+
+  <!-- INTRODUCTION -->
+  <section class="products-intro padding-small">
+    <div class="container my-5">
+      <div class="display-header mb-5">
+        <h2 class="display-5 text-center fw-bold text-primary-blue">Our Core expertise in Products & services model :</h2>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-12 col-md-10">
+          <div class="card shadow-lg border-0 rounded-4">
+            <div class="card-body p-5">
+              <p class="card-text text-muted fs-5">
+                ABSN provides a wide range of services under the professional management with Global
+                Multi-National Biopharmaceutical expertise and hands-on experience. 
+              </p>
+              <p class="card-text text-muted fs-5">
+                Our experience includes Quality and Regulatory guidelines in compliance with 
+                <strong>cGMP, cGLP, cGCP, ICH, USP, EP and JP</strong> in 
+                <strong>Bacterial and Viral Vaccines, r-DNA derived Proteins, and Monoclonal Antibodies.</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Top Banner -->
+  <section class="gradient-bg text-center" style="height: 200px;">
+  </section>
+
+  <!-- Content Section -->
+  <section class="container card-section bg-white padding-medium">
+    <h2 class="fw-bold">Total Investment required US $ 25, 000,000</h2>
+
+    <!-- Phase-1 -->
+    <div class="phase1">
+      <h5 class="mt-4 fw-bold">In Phase 1</h5>
+      <p>
+        We have 20,000SFT R&D Facility and expected 50-100 Acres land and signed AP CARL PPP with
+        government. We will be developing patented & proprietary platform technology driven
+      </p>
+      <ul class="custom-list">
+        <li>Animal Vaccines</li>
+        <li>Diagnostic Reagents</li>
+        <li>Veterinary speciality Pharmaceuticals</li>
+      </ul>
+    </div>
+    <!-- Phase-2 -->
+    <div class="phase2">
+      <h5 class="mt-4 fw-bold">In Phase 2</h5>
+      <p>
+        We are building our own biopharmaceutical cGMP manufacturing with
+        disposable/modular facility and required investment US $ 25M. Use of funds are for building our
+        own facility & R&D and Product Development, QA/QC/RA/BD/Marketing
+      </p>
+      <ul class="custom-list">
+        <li>Partnered with US based C1 platform technology that expresses 20g/L proteins</li>
+        <li>Exclusive license for diabetic Ulcers/wound care products from USA</li>
+        <li>Have 3rd generation cell line Novacell for making viral vaccines (Animal & Human)</li>
+      </ul>
+    </div>
+    
+    <div class="point3">
+      <p>Strong technical/business/marketing expert management that worked global MNCs/Launched
+        blockbuster Biologics/Bio-drugs cost effectively /quality/timely
+      </p>
+    </div>
+
+    <div class="point4">
+      <h5 class="mt-4 fw-bold">ROI/Valuation</h5>
+      <p>
+         5 yrs expected to be US $ 250,000,000, Exit: IPO listing and or M&A Merger/Acquisition
+      </p>
+    </div>
+
+    <!-- Technical Specifications -->
+    <h5 class="mt-4 fw-bold">Technical Specifications</h5>
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Model</th>
+            <th>Temperature Range</th>
+            <th>Internal Volume</th>
+            <th>External Dimension</th>
+            <th>Net Weight</th>
+            <th>Full Load Weight</th>
+            <th>Endurance Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>NAV-DURAB1</td>
+            <td>-80 ~ -70℃</td>
+            <td>12L</td>
+            <td>325×320×470mm</td>
+            <td>7.5kg</td>
+            <td>15kg</td>
+            <td>≥120hrs</td>
+          </tr>
+          <tr>
+            <td>NAV-DURAB2</td>
+            <td>-80 ~ -70℃</td>
+            <td>31L</td>
+            <td>325×450×630mm</td>
+            <td>14kg</td>
+            <td>25kg</td>
+            <td>≥250hrs</td>
+          </tr>
+          <tr>
+            <td>NAV-DURAB3</td>
+            <td>-80 ~ -70℃</td>
+            <td>46L</td>
+            <td>325×550×750mm</td>
+            <td>21kg</td>
+            <td>35kg</td>
+            <td>≥300hrs</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </section>
 

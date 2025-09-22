@@ -77,8 +77,13 @@ CSS STRUCTURE:
   --swiper-theme-color: #111 !important;
   --cadet-blue-color: #4c83c2;
   --cadet-gray-color: #bac2c4;
+
+  --gradient-color : linear-gradient(90deg, #b6022e 0%, #093074 100%);
 }
 
+.gradient-color{
+  color: var(--gradient-color);
+}
 /* on mobile devices below 600px
  */
 @media screen and (max-width: 600px) {
@@ -167,17 +172,18 @@ strong {
 .text-primary {
   color: var(--light-color) !important;
 }
-
+.text-secondary {
+  color: var(--secondary-color);
+}
 .text-primary-blue{
   color: var(--primary-color) ;
 }
-
 .text-primary-500 {
   color: var(--cadet-gray-color) !important;
 }
 
 .text-primary-500:hover {
-  color: var(--light-color) !important;
+  color: var(--secondary-color) !important;
 }
 .text-para{
   color: var(--gray-color);
@@ -328,7 +334,7 @@ h2.light,
 h3.light,
 h4.light,
 h5.light {
-  color: var(--light-color);
+  color: var(--secondary-color);
 }
 
 /* - Section width
@@ -379,7 +385,7 @@ h5.light {
 }
 
 /* button outline */
-.btn.btn-outline-dark,
+/* .btn.btn-outline-dark,
 .btn.btn-outline-light,
 .btn.btn-outline-accent,
 .btn.btn-outline-primary {
@@ -387,7 +393,7 @@ h5.light {
   text-shadow: none;
   box-shadow: none;
   border: 2px solid transparent;
-}
+} */
 
 .btn.btn-outline-dark:hover::after,
 .btn.btn-outline-light:hover::after {
@@ -419,16 +425,16 @@ h5.light {
   color: var(--light-color) !important;
 }
 
-.btn.btn-outline-primary {
+/* .btn.btn-outline-primary {
   background: transparent;
   border-color: var(--primary-color);
   color: var(--dark-color);
-}
+} */
 
-.btn.btn-outline-primary:hover {
+/* .btn.btn-outline-primary:hover {
   border-color: var(--dark-color);
   color: var(--dark-color) !important;
-}
+} */
 
 .btn.btn-full {
   display: block;
@@ -489,14 +495,15 @@ h5.light {
 }
 
 .btn.btn-primary {
-  background-color: var(--primary-color);
+  background :linear-gradient(90deg, #093074 0%, #b6022e 100%);
   color: var(--light-color);
   border: none;
 }
 
 .btn.btn-primary:hover {
-  background-color: var(--primary-color-400);
-  color: var(--primary-color);
+  background: var(--primary-color-400);
+  color: var(--secondary-color);
+  font-weight: 600;
 }
 
 .btn.btn-banner {
@@ -506,8 +513,9 @@ h5.light {
 }
 
 .btn.btn-banner:hover {
-  background-color: var(--primary-color);
-  color: var(--primary-color-400);
+  background :linear-gradient(90deg, #093074 0%, #b6022e 100%);
+  color: var(--light-color);
+  border: none;
 }
 
 
@@ -573,7 +581,7 @@ svg.primary-color {
 }
 
 svg.primary-color-500 {
-  color: var(--bs-primary-rgb);
+  color: var(--primary-color);
 }
 
 /* - Search Bar
@@ -623,7 +631,7 @@ div#navbar-primary {
 
 .navbar-nav a.nav-link:hover,
 .navbar-nav a.nav-link.active {
-  color: var(--primary-color) !important;
+  color: var(--secondary-color) !important;
   font-weight: bold;
 }
 
@@ -733,12 +741,12 @@ section#intro {
 }
 
 #our-services .icon-box:hover {
-  box-shadow: 0px 2px 40px rgba(8, 70, 78, 0.10);
+  box-shadow: 0px 2px 40px rgba(236, 51, 5);
   margin-top: -3px;
 }
 
 #our-services .service-icon-box {
-  box-shadow: 0px 2px 40px rgba(8, 70, 78, 0.10);
+  box-shadow: 2px 2px 40px rgba(243, 56, 9);
 
 }
 
