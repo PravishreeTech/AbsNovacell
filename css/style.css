@@ -62,11 +62,19 @@ CSS STRUCTURE:
 /** 1. VARIABLES
 --------------------------------------------------------------*/
 :root {
+    --primary-color-1: #B31942;
+    --primary-color-2-hover: #0f4a93;
+    --footer-color: #0F172A;
+    --footer-heading-color: #fff;
+    --footer-content-color: #b3bac4;
+    --footer-bottom-color: #1E293B;
+    --copyright-background: #fff;
+
   --accent-color: #333;
   --black-color: #000;
   --dark-color: #4C5354;
-  --primary-color: #213F61;
-  --secondary-color : #e70a27;
+  --primary-color: #0A3161;
+  --secondary-color : #ea2c42;
   --primary-color-200: #e8f1ec;
   --primary-color-400: #e8f1ed;
   --gray-color: #ccd7da;
@@ -78,12 +86,16 @@ CSS STRUCTURE:
   --cadet-blue-color: #4c83c2;
   --cadet-gray-color: #bac2c4;
 
-  --gradient-color : linear-gradient(90deg, #b6022e 0%, #093074 100%);
+  --gradient-color : linear-gradient(135deg, #1B365D 0%, #0C7BC0 100%)
 }
 
-.gradient-color{
-  color: var(--gradient-color);
-}
+.gradient-text {
+    background: linear-gradient(135deg, #1B365D 0%, #0C7BC0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
 /* on mobile devices below 600px
  */
 @media screen and (max-width: 600px) {
@@ -183,7 +195,7 @@ strong {
 }
 
 .text-primary-500:hover {
-  color: var(--secondary-color) !important;
+  color: var(--light-color) !important;
 }
 .text-para{
   color: var(--gray-color);
@@ -235,7 +247,7 @@ strong {
 }
 
 .gradient-bg {
-  background: linear-gradient(90deg, #b6022e 0%, #093074 100%);
+  background: linear-gradient(135deg, #0C7BC0 0%, #1B365D 100%);
   padding: 40px 0;
 }
 
@@ -495,7 +507,7 @@ h5.light {
 }
 
 .btn.btn-primary {
-  background :linear-gradient(90deg, #093074 0%, #b6022e 100%);
+  background : linear-gradient(135deg, #0C7BC0 0%, #1B365D 100%);
   color: var(--light-color);
   border: none;
 }
@@ -513,7 +525,7 @@ h5.light {
 }
 
 .btn.btn-banner:hover {
-  background :linear-gradient(90deg, #093074 0%, #b6022e 100%);
+  background : linear-gradient(135deg, #0C7BC0 0%, #1B365D 100%);
   color: var(--light-color);
   border: none;
 }
@@ -1222,3 +1234,83 @@ body, p, span{
   top: 40px;
   width: 550px;
 }
+
+
+/* MISSION AND VISION */
+    .speech-bubble {
+      border-radius: 20px;
+      position: relative;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+      padding: 34px 40px 32px 40px;
+      background: #fff;
+    }
+    .bubble-yellow {
+      background: #fff;
+      box-shadow: 8px 10px 0 0 var(--secondary-color);
+    }
+    .bubble-green {
+      background: #fff;
+      box-shadow: 8px 10px 0 0 var(--secondary-color);
+    }
+    .flag-yellow {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      width: 22px;
+      height: 22px;
+      color: #fff ;
+    }
+    .flag-green {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      width: 22px;
+      height: 22px;
+      color: #fff;
+    }
+    .speech-bubble:after {
+      content: '';
+      position: absolute;
+      left: 36px;
+      bottom: -24px;
+      width: 36px;
+      height: 24px;
+      background: inherit;
+      clip-path: polygon(50% 100%, 0 0, 100% 0);
+      z-index: 1;
+      box-shadow: none;
+    }
+    .bubble-yellow:after {
+      background: linear-gradient(135deg, #1B365D 0%, #0C7BC0 100%);
+    }
+    .bubble-green:after {
+      background: linear-gradient(135deg, #1B365D 0%, #0C7BC0 100%);
+    }
+    .icon-circle {
+      width: 40px;
+      height: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+    }
+    .icon-yellow {
+      color: var(--light-color);
+    }
+    .icon-green {
+      color: var(--light-color);
+    }
+    .section-title {
+      font-size: 2rem;
+      margin-left: 12px;
+      margin-bottom: 7px;
+      display: inline-block;
+    }
+    .section-desc {
+      font-size: 0.97rem;
+    }
+    @media (max-width: 767.98px) {
+      .speech-bubble {
+        margin-bottom: 2rem;
+      }
+    }

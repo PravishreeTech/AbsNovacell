@@ -183,89 +183,157 @@
   <!-- BANNER -->
   <section id="intro" class="position-relative overflow-hidden">
     <div class="banner">
-      <img src="./asserts/images/banner.jpg" alt="banner" class="img-fluid" style="weight:100%; height:500px">
-      <!-- Overlay -->
-      <div class="overlay position-absolute top-0 start-0 w-100 h-100 bg-primary" style="opacity: 0.8;"></div>
+      <!-- Banner Image -->
+      <img src="./asserts/images/banner.jpg" alt="banner" class="img-fluid w-100" style="height: 450px; object-fit: cover;">
 
+      <!-- Overlay -->
+      <div class="overlay position-absolute top-0 start-0 w-100 h-100 bg-primary" style="opacity: 0.7;"></div>
+
+      <!-- Banner Content -->
       <div class="container">
-        <div class="banner-content position-absolute padding-medium text-white">
-          <h1 class="display-3 fw-bold">Affordable. Available. Accessible.</h1>
-          <p class="mt-4 mb-4 text-white">Transforming healthcare with biologics, biosimilars and advanced therapies powered by AI/ML</p>
+        <div class="banner-content position-absolute top-50 start-50 translate-middle text-white text-center">
+          <!-- Main Heading -->
+          <h1 class="display-3 fw-bold">
+            Affordable. Available. Accessible.
+          </h1>
+          <!-- Supporting Tagline -->
+          <p class="mt-4 mb-3 text-light lead">
+            Transforming healthcare with biologics, biosimilars and advanced therapies powered by AI/ML.
+          </p>
+
+          <!-- CTA Buttons -->
           <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
-            <a href="./pipeline.html" class="btn btn-medium btn-banner btn-pill text-uppercase fw-bold">Explore Our Pipeline </a>
-            <a href="./contact-us.html" class="btn btn-medium btn-banner btn-pill text-uppercase fw-bold">Partner With Us </a>
+            <a href="./pipeline.html" class="btn btn-light btn-lg rounded-pill fw-bold text-uppercase">
+              Explore Our Pipeline
+            </a>
+            <a href="./contact-us.html" class="btn btn-light btn-lg rounded-pill fw-bold text-uppercase">
+              Partner With Us
+            </a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT, MISSION & VISION -->
-  <section id="about-salon" class="padding-medium text-light">
+  <!-- MISSION & VISION -->
+  <div class="container padding-medium mb-5">
+    <div class="row justify-content-center g-5">
+      <h2 class="display-5 text-center fw-bold gradient-text">MISSION - VISION</h2>
+      <!-- Mission -->
+      <div class="col-md-6">
+        <div class="speech-bubble bubble-yellow position-relative" style="background: linear-gradient(135deg, #0C7BC0 0%, #1B365D 100%);">
+          <svg class="flag-yellow" viewBox="0 0 24 24"><path fill="currentColor" d="M4 2v20h2V14h12l-1-4l1-4H6V2z"/></svg>
+          <span class="icon-circle icon-yellow">
+            <!-- Target SVG -->
+            <svg width="32" height="32" fill="none" viewBox="0 0 32 32"><circle cx="16" cy="16" r="12" stroke="#000" stroke-width="2"/><circle cx="16" cy="16" r="6" stroke="#000" stroke-width="2"/><circle cx="16" cy="16" r="3" fill="#facd60" stroke="#000" stroke-width="2"/><path d="M28 4l-4 4" stroke="#000" stroke-width="2" stroke-linecap="round"/><path d="M28 4v4h-4" stroke="#000" stroke-width="2" stroke-linecap="round"/></svg>
+          </span>
+          <span class="section-title text-light fw-bold">Mission</span>
+          <div class="section-desc mt-1 text-light">To ensure Affordability, Availability and Accessibility of world-class biologics, biosimilars and advanced therapies for patients and communities everywhere.</div>
+        </div>
+      </div>
+      <!-- Vision -->
+      <div class="col-md-6">
+        <div class="speech-bubble bubble-green position-relative" style="background: linear-gradient(135deg, #0C7BC0 0%, #1B365D 100%);">
+          <svg class="flag-green" viewBox="0 0 24 24"><path fill="currentColor" d="M4 2v20h2V14h12l-1-4l1-4H6V2z"/></svg>
+          <span class="icon-circle icon-green">
+            <!-- Bulb SVG -->
+            <svg width="32" height="32" fill="none" viewBox="0 0 32 32"><circle cx="16" cy="15" r="8" stroke="#68c9af" stroke-width="2"/><circle cx="16" cy="15" r="4" fill="#68c9af" stroke="#000" stroke-width="2"/><path d="M16 23v2" stroke="#000" stroke-width="2" stroke-linecap="round"/><path d="M19 27H13" stroke="#000" stroke-width="2" stroke-linecap="round"/><path d="M14 29h4" stroke="#000" stroke-width="2" stroke-linecap="round"/></svg>
+          </span>
+          <span class="section-title text-light fw-bold">Vision</span>
+          <div class="section-desc mt-1 text-light">To be the unparalleled global leader in biologics, biosimilars and cell & gene therapy through AI/ML-driven innovation and scientific excellence.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT US -->
+  <section id="about-us" class="padding-medium py-5" style="background: linear-gradient(90deg, #0C7BC0 0%, #1B365D 100%);">
     <div class="container">
+      
+      <!-- Section Heading -->
+      <h2 class="display-5 text-center fw-bold text-light mb-5">ABOUT US</h2>
+      
+      <!-- Row for Image + Content -->
       <div class="row align-items-center">
         
-        <!-- Left Side Content -->
-        <div class="col-lg-6 mb-4 mb-lg-0">
-          <h2 class="display-5 fw-bold text-primary-blue gap-5">About Us</h2>
-          <p>
-            <b>ABS Novacell</b> is a global biopharmaceutical company bridging innovation and accessibility. With R&D roots in the U.S. and India, we specialize in biologics, biosimilars, vaccines, and cell & gene therapies.
-          </p>
-          <p class="mt-3">
-            <b>What Defines Us :</b>
-          </p>
-          <ul class="list-group list-group-numbered">
-            <li class="list-group-item">Decades of scientific and regulatory expertise (US-FDA, EMA, ICH)</li>
-            <li class="list-group-item">Led by world-renowned scientists and global advisors</li>
-            <li class="list-group-item">End-to-end capabilities: discovery → development → commercialization</li>
-            <li class="list-group-item">Commitment to quality, innovation, and global health impact</li>
-          </ul> <br>
-          <a href="./about-us.html" class="btn btn-medium btn-primary btn-pill">Know More</a>
+        <!-- Left Box (Image) -->
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <img src="./asserts/images/about.jpg" 
+              alt="Example Image" 
+              class="img-fluid rounded w-100 border border-3 border-light p-2">
         </div>
-
-        <!-- Right Side Testimonials -->
-        <div class="col-lg-6">
-          <div class="row g-3">
-            <div class="col-12">
-              <div class="p-4 border-radius-20" style="background:linear-gradient(90deg, #b6022e 0%, #093074 100%);">
-                <h6 class="fw-bold mt-2 text-primary">OUR MISSION</h6>
-                <p class="text-para">
-                  To ensure Affordability, Availability and Accessibility of world-class biologics, biosimilars and advanced therapies for patients and communities everywhere.
-                </p>
-              </div>
-            </div>
-            <div class="col-12">
-              <div class="p-4 border-radius-20" style="background:linear-gradient(90deg, #b6022e 0%, #093074 100%);">
-                <h6 class="fw-bold mt-2">OUR VISION</h6>
-                <p class="text-para">
-                  To be the unparalleled global leader in biologics, biosimilars and cell & gene therapy through AI/ML-driven innovation and scientific excellence. 
-                </p>
-              </div>
+        
+        <!-- Right Content -->
+        <div class="col-lg-8">
+          <div class="p-3">
+            <p class="text-light">
+              ABSNovacell Biopharmaceuticals Limited is a subsidiary of American Biosources Inc., NJ, USA, was originally established in
+              year 2001, having R & D labs and developmental laboratories in USA. Technology transfer for commercialization to India.
+            </p>
+            <p class="text-light">
+              The company was originally founded by two world renowned scientists and global BioPharma executives based on the strong
+              foundation of research innovation, novelty, intellectual property generation. We have extensive
+              USFDA/EMEA/MHRA expertise.
+            </p>
+            <p class="text-light">
+              ABSNovacell Biopharmaceuticals Limited is a Biopharmaceutical & Biotechnology R&D, Process Development and Clinical stage company. We have commercial products in speciality Pharmaceuticals, Nutraceuticals and Diagnostic.
+            </p>
+            
+            <!-- Subheading -->
+            <p class="text-uppercase fw-bold text-light" style="text-decoration: underline; text-underline-offset: 4px;">
+              Our Strategic Business Units :
+            </p>
+            
+            <!-- Buttons -->
+            <div class="d-flex flex-wrap gap-2">
+              <button type="button" class="btn btn-light btn-lg btn-sm fw-semibold">Biosimilars</button>
+              <button type="button" class="btn btn-light btn-lg btn-sm fw-semibold">Innovative Biotherapeutics</button>
+              <button type="button" class="btn btn-light btn-lg btn-sm fw-semibold">Nutraceuticals</button>
+              <button type="button" class="btn btn-light btn-lg btn-sm fw-semibold">Diagnostics</button>
+              <button type="button" class="btn btn-light btn-lg btn-sm fw-semibold">Consulting Services</button>
             </div>
           </div>
         </div>
       </div>
+      
+      <!-- Bottom Paragraph -->
+      <div class="mt-5">
+        <p class="text-light">
+          ABSNovacell Biopharmaceuticals Limited is being promoted by world renowned scientists, business, Technology, Finance,
+          Management team with significant investments. The Board of Directors, Senior Management, Scientific and Technical advisory
+          board consist of global leaders represents world class Biopharmaceutical companies and
+          Academicians for the purpose of commercializing the established novel R&D pipeline products (new technology
+          platform) with current Good Manufacturing Practices (cGMP) as per highly regulated standards. It’s
+          scientific and financial advisors are world renowned and advise the company for strategy and
+          execution.
+        </p>
+      </div>
+      
     </div>
   </section>
 
   <!-- PRODUCTS -->
   <section id="our-services" class="position-relative">
-    <!-- Background Image -->
-    <div class="hero-image" 
-        style="background: url(https://www.shutterstock.com/image-photo/scientist-holding-medical-testing-tubes-260nw-2506585825.jpg) no-repeat center top / cover; 
-                height: 400px; 
-                position: relative;">
-      <div class="container h-30 d-flex justify-content-center align-items-center padding-medium">
-        <h2 class="text-white display-4 fw-bold">Our Expertise & Products</h2>
+    <!-- Banner Section -->
+    <div class="hero-image position-relative" 
+        style="background: url(./asserts/images/products_banner.jpg) no-repeat center center / cover; 
+                height: 350px;">
+
+      <div class="overlay position-absolute top-0 start-0 w-100 h-100 bg-primary" style="opacity: 0.6;"></div>
+
+      <div class="container h-100 d-flex justify-content-center align-items-center position-relative">
+        <h2 class="text-white display-4 fw-bold text-center">
+          Our Expertise & Products
+        </h2>
       </div>
     </div>
 
     <!-- Cards Section -->
-    <div class="container position-relative" style="margin-top: -150px; z-index: 2;">
-      <div class="row justify-content-center">
+    <div class="container position-relative" style="margin-top: -100px; z-index: 2;">
+      <div class="row justify-content-center g-2 text-center">
         
-        <div class="col-lg-3 col-md-6 pb-3">
-          <div class="icon-box p-4 bg-light border-radius-10 border border-2 border-danger text-center shadow-sm" style="height: 210px;">
+        <div class="col-lg col-md-4">
+          <div class="icon-box p-4 bg-light rounded shadow-sm h-90" style="border: 2px solid #1B365D;">
             <div class="icon-box-icon">
               <svg class="vaccines mt-3 primary-color-500" width="50" height="50">
                 <use xlink:href="#vaccines" />
@@ -273,13 +341,13 @@
             </div>
             <div class="icon-box-content">
               <h3 class="card-title py-2 text-danger fw-bold text-uppercase">Novel Vaccines</h3>
-              <p>Viral & bacterial, for human and animal health</p>
+              <p>Viral & bacterial for human and animal health</p>
             </div>
           </div>
         </div>
 
-        <div class="col-lg-3 col-md-6 pb-3">
-          <div class="icon-box p-4 bg-light border-radius-10 border border-2 border-danger text-center shadow-sm" style="height: 210px;">
+        <div class="col-lg col-md-4">
+          <div class="icon-box p-4 bg-light rounded shadow-sm h-90" style="border: 2px solid #1B365D;">
             <div class="icon-box-icon">
               <svg class="test-tube mt-3 primary-color-500" width="50" height="50">
                 <use xlink:href="#test-tube" />
@@ -292,8 +360,8 @@
           </div>
         </div>
 
-        <div class="col-lg-3 col-md-6 pb-3">
-          <div class="icon-box p-4 bg-light border-radius-10 border border-2 border-danger text-center shadow-sm" style="height: 210px;">
+        <div class="col-lg col-md-4">
+          <div class="icon-box p-4 bg-light rounded shadow-sm h-90" style="border: 2px solid #1B365D;">
             <div class="icon-box-icon">
               <svg class="diagnostic-kits mt-3 primary-color-500" width="50" height="50">
                 <use xlink:href="#diagnostic-kits" />
@@ -301,13 +369,13 @@
             </div>
             <div class="icon-box-content">
               <h3 class="card-title py-2 text-danger fw-bold text-uppercase">Diagnostic & Reagents</h3>
-              <p>•	Innovative solutions for clinical and veterinary needs</p>
+              <p>Innovative solutions for clinical and veterinary needs</p>
             </div>
           </div>
         </div>
 
-        <div class="col-lg-3 col-md-6 pb-3">
-          <div class="icon-box p-4 bg-light border-radius-10 border border-2 border-danger text-center shadow-sm" style="height: 210px;">
+        <div class="col-lg col-md-4">
+          <div class="icon-box p-4 bg-light rounded shadow-sm h-90" style="border: 2px solid #1B365D;">
             <div class="icon-box-icon">
               <svg class="biosimilars mt-3 primary-color-500" width="50" height="50">
                 <use xlink:href="#biosimilars" />
@@ -320,24 +388,23 @@
           </div>
         </div>
 
-        <div class="col-lg-3 col-md-6 pb-3">
-          <div class="icon-box p-4 bg-light border-radius-10 border border-2 border-danger text-center shadow-sm" style="height: 210px;">
+        <div class="col-lg col-md-4">
+          <div class="icon-box p-4 bg-light rounded shadow-sm h-90" style="border: 2px solid #1B365D;">
             <div class="icon-box-icon">
               <svg class="generics mt-3 primary-color-500" width="50" height="50">
                 <use xlink:href="#generics" />
               </svg>
             </div>
             <div class="icon-box-content">
-              <h3 class="card-title py-2 text-danger fw-bold text-uppercase">Nutraceuticals & Specialty Pharmaceuticals </h3>
+              <h3 class="card-title py-2 text-danger fw-bold text-uppercase">Nutraceuticals & Specialty Pharmaceuticals</h3>
               <p>Supporting holistic well-being</p>
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Button -->
-        <div class="text-center mt-4 padding-small">
-          <a href="./pipeline.html" class="btn btn-medium btn-primary btn-pill">View Pipeline</a>
-        </div>
+      <div class="text-center mt-4 mb-5 padding-small">
+        <a href="./pipeline.html" class="btn btn-medium btn-primary btn-pill">View Pipeline</a>
       </div>
     </div>
   </section>
@@ -489,7 +556,7 @@
   </section> -->
 
   <!-- COUNTING -->
-  <section id="about-us" class="pt-0" style="background:linear-gradient(90deg, #b6022e 0%, #093074 100%);">
+  <section id="about-us" class="pt-0" style="background:linear-gradient(90deg, #0C7BC0 0%, #1B365D  100%);">
     <div class="container">
       <div class="row padding-medium">
 
@@ -573,30 +640,30 @@
   </section>
 
   <!-- FOOTER -->
-  <footer id="footer" class="overflow-hidden bg-primary padding-medium pb-0">
+  <footer id="footer" class="overflow-hidden padding-medium pb-0" style="background: linear-gradient(360deg, #0C7BC0 0%, #1B365D 100%);">
     <div class="container justify-content-between">
       <div class="row gy-4"> <!-- gy-4 = vertical spacing for mobile -->
         
         <!-- Left Side -->
         <div class="col-lg-6 col-md-6 pe-lg-1">
           <div class="footer-menu">
-            <h1 class="fw-bold text-primary">BIO NOVACELL</h1>
-            <p class="text-para">© ABS Novacell Biopharmaceuticals Limited. Advancing compassionate innovation for a healthier tomorrow.</p>
+            <!-- <h1 class="fw-bold text-primary">BIO NOVACELL</h1> -->
+            <p class="text-para">© ABSNovacell Biopharmaceuticals Limited. Advancing compassionate innovation for a healthier tomorrow.</p>
             
             <div class="contact-item text-primary">
               <div class="d-flex align-items-start mb-2">
                 <svg class="me-2 text-primary" width="20" height="20"><use xlink:href="#location"></use></svg>
-                <span>B-502, Leela Nagar, Ameerpet, Hyderabad -16, AP India</span>
+                <span>Office in India : "B-502, Leela Nagar, Ameerpet, Hyderabad -16, AP India"</span>
               </div>
               <div class="d-flex align-items-start mb-2">
                 <svg class="me-2 text-primary" width="20" height="20"><use xlink:href="#location"></use></svg>
-                <span>80 Main Street, 5th Floor, West Orange, NJ 07052, USA</span>
+                <span>Office in USA : "80 Main Street, 5th Floor, West Orange, NJ 07052, USA"</span>
               </div>
               <div class="d-flex align-items-start mb-2">
                 <svg class="me-2 text-primary" width="20" height="20"><use xlink:href="#email"></use></svg>
                 <div>
-                  <a href="mailto:dr.niranjan@absnovacell.com" class="d-block text-primary-500">dr.niranjan@absnovacell.com</a>
-                  <a href="mailto:nkumar.wharton@gmail.com" class="d-block text-primary-500">nkumar.wharton@gmail.com</a>
+                  <a href="mailto:dr.niranjan@absnovacell.com" class="d-block text-primary-500">info@absnovacell.com</a>
+                  <!-- <a href="mailto:nkumar.wharton@gmail.com" class="d-block text-primary-500">nkumar.wharton@gmail.com</a> -->
                 </div>
               </div>
               <div class="d-flex align-items-start">
@@ -643,7 +710,7 @@
 
       <!-- Bottom Footer -->
       <div class="d-md-flex justify-content-between padding-small text-center border-top mt-4 pt-3">
-        <p class="mb-0 text-para">© 2025 Novacell - All rights reserved</p>
+        <p class="mb-0 text-para">© 2025 ABSNovacell - All rights reserved</p>
         <p class="mb-0 text-para">Designed by : <a class="text-primary" href="https://pravishree.com" target="_blank" class="fw-semibold">Pravishree Designs Co.</a></p>
       </div>
     </div>
