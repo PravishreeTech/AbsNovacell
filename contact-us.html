@@ -176,40 +176,52 @@
   </header>
 
   <!-- BANNER -->
-  <section id="intro" style="background:linear-gradient(90deg, #b6022e 0%, #093074 100%);">
-    <div class="container">
-      <div class="banner-content padding-medium text-primary">
-        <h1 class="display-3 fw-bold">Contact Us</h1>
-        <span class="item"><a href="index.html" class="text-primary">Home</a></span> &nbsp; <span class="">/</span> &nbsp; <span
-          class=" item">Contact Us</span>
+  <section id="banner" class="position-relative">
+    <!-- Banner Section -->
+    <div class="hero-image position-relative" 
+        style="background: url(./asserts/images/contact-banner.jpg) no-repeat center center / cover; 
+                height: 350px;">
+      <div class="overlay position-absolute top-0 start-0 w-100 h-100 bg-primary" style="opacity: 0.8;"></div>
+      <div class="container h-100 d-flex justify-content-center align-items-center position-relative">
+        <h2 class="text-white display-4 fw-bold text-center">
+          Contact-Us
+        </h2>
       </div>
     </div>
   </section>
 
   <!-- CONTACT FORM -->
-  <section id="contact" class="py-5">
+  <section id="contact" class="py-5 padding-medium">
     <div class="container">
       <div class="row g-4">
 
         <!-- Left Side - Contact Info -->
         <div class="col-lg-6">
-          <div class="bg-primary text-white p-4 rounded-3 h-100">
-            <h4 class="fw-bold mb-3">Contact Locations</h4>
+          <div class="text-white p-4 rounded-3 h-100" style="background: linear-gradient(135deg, #1B365D 50%,#0C7BC0 100%);">
+            <h4 class="fw-bold mb-3 text-center">Office in India</h4>
 
             <!-- Contact Items -->
             <div class="d-flex align-items-center bg-light bg-opacity-25 p-3 rounded mb-3">
               <i class="bi bi-geo-alt-fill fs-3 me-3"></i>
               <div class="text-dark">
-                <h6 class="fw-bold mb-0">Head Office Location</h6>
+                <!-- <h6 class="fw-bold mb-0">Head Office Location</h6> -->
                 <small>80 Main Street, 5th Floor west orange <br> NJ 07052 <br>USA</small>
               </div>
             </div>
 
             <div class="d-flex align-items-center bg-light bg-opacity-25 p-3 rounded mb-3">
-              <i class="bi bi-geo-alt-fill fs-3 me-3"></i>
+              <i class="bi bi-envelope-fill fs-3 me-3"></i>
               <div class="text-dark">
-                <h6 class="fw-bold mb-0">India Location</h6>
-                <small>B-502, Imperial Prestige Apts <br> Leela Nagar, Ameerpet <br> Hyderabad -16, AP India</small>
+                <h6 class="fw-bold mb-0">Email Us</h6>
+                <small>info@absnovacell.com</small> <br>
+              </div>
+            </div>
+          
+            <div class="d-flex align-items-center bg-light bg-opacity-25 p-3 rounded mb-3">
+              <i class="bi bi-telephone-fill fs-3 me-3"></i>
+              <div class="text-dark">
+                <h6 class="fw-bold mb-0">Call Us</h6>
+                <small>610-905-8609</small> <br>
               </div>
             </div>
 
@@ -217,16 +229,23 @@
         </div>
 
         <!-- Right Side - Map + Form -->
-         <div class="col-lg-6">
-          <div class="bg-primary text-white p-4 rounded-3 h-100">
-            <h4 class="fw-bold mb-3">Contact through Email & Calls</h4>
+        <div class="col-lg-6">
+          <div class="text-white p-4 rounded-3 h-100" style="background: linear-gradient(150deg, #0C7BC0 0%, #1B365D 100%);">
+            <h4 class="fw-bold mb-3 text-center">Office in USA</h4>
+            
+            <div class="d-flex align-items-center bg-light bg-opacity-25 p-3 rounded mb-3">
+              <i class="bi bi-geo-alt-fill fs-3 me-3"></i>
+              <div class="text-dark">
+                <!-- <h6 class="fw-bold mb-0">India Location</h6> -->
+                <small>B-502, Imperial Prestige Apts <br> Leela Nagar, Ameerpet <br> Hyderabad -16, AP India</small>
+              </div>
+            </div>
 
             <div class="d-flex align-items-center bg-light bg-opacity-25 p-3 rounded mb-3">
               <i class="bi bi-envelope-fill fs-3 me-3"></i>
               <div class="text-dark">
                 <h6 class="fw-bold mb-0">Email Us</h6>
                 <small>info@absnovacell.com</small> <br>
-                <!-- <small>nkumar.wharton@gmail.com</small> -->
               </div>
             </div>
 
@@ -234,75 +253,64 @@
               <i class="bi bi-telephone-fill fs-3 me-3"></i>
               <div class="text-dark">
                 <h6 class="fw-bold mb-0">Call Us</h6>
-                <small>610-905-8609</small> <br>
                 <small>Fax: 610-365-8795</small>
               </div>
             </div>
-
-            <!-- Social Icons -->
-            <h6 class="fw-bold mt-4">Follow Us</h6>
-            <ul class="social-links list-unstyled d-flex mt-3">
-              <li>
-                <a href="#">
-                  <svg class="facebook text-primary-500 me-3" width="25" height="25">
-                    <use xlink:href="#facebook"></use>
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <svg class="twitter text-primary-500 me-3" width="25" height="25">
-                    <use xlink:href="#twitter"></use>
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <svg class="instagram text-primary-500 me-3" width="25" height="25">
-                    <use xlink:href="#instagram"></use>
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <svg class="linkedin text-primary-500" width="25" height="25">
-                    <use xlink:href="#linkedin"></use>
-                  </svg>
-                </a>
-              </li>
-            </ul>
           </div>
         </div>
+        
+        <div class="container py-5">
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+              <div class="card shadow-sm rounded-4 p-4" style="background: linear-gradient(135deg, #1B365D 50%, #0C7BC0 100%);">
+                <h4 class="text-center fw-bold mb-4 text-light">Send us a message</h4>
+                <form>
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <input type="text" class="form-control" placeholder="First Name" required>
+                    </div>
+                    <div class="col-md-6">
+                      <input type="text" class="form-control" placeholder="Last Name" required>
+                    </div>
 
-        <div class="col-lg-12">
+                    <div class="col-12">
+                      <input type="email" class="form-control" placeholder="Email Address" required>
+                    </div>
 
-          <!-- Contact Form -->
-          <div class="bg-white p-4 rounded-3 shadow-sm">
-            <h5 class="fw-bold mb-2">Send Us a Message</h5>
-            <p class="small text-muted">Lorem ipsum dolor sit amet consectetur adipiscing elit mauris hendrerit faucibus imperdiet nec eget felis.</p>
-            <form>
-              <div class="mb-2">
-                <input type="text" class="form-control" placeholder="Full Name" required>
+                    <div class="col-12">
+                      <input type="text" class="form-control" placeholder="Company">
+                    </div>
+
+                    <div class="col-12">
+                      <input type="text" class="form-control" placeholder="Phone Number">
+                    </div>
+
+                    <div class="col-12">
+                      <input type="text" class="form-control" placeholder="Subject (optional)">
+                    </div>
+
+                    <div class="col-12">
+                      <textarea class="form-control" rows="4" placeholder="Your Message"></textarea>
+                    </div>
+
+                    <!-- Button -->
+                    <div class="col-12 text-center mt-4">
+                      <button type="submit" class="btn btn-banner px-5 py-2 fw-semibold">
+                        Send Message
+                      </button>
+                    </div>
+                  </div>
+                </form>
               </div>
-              <div class="mb-2">
-                <input type="email" class="form-control" placeholder="Email Address" required>
-              </div>
-              <div class="mb-2">
-                <input type="text" class="form-control" placeholder="Subject" required>
-              </div>
-              <div class="mb-3">
-                <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary w-100 fw-bold">
-                Send Message <i class="bi bi-send-fill ms-2"></i>
-              </button>
-            </form>
+            </div>
           </div>
         </div>
 
       </div>
     </div>
   </section>
+
+
 
   <!-- FOOTER -->
   <footer id="footer" class="overflow-hidden padding-medium pb-0" style="background: linear-gradient(360deg, #0C7BC0 0%, #1B365D 100%);">
