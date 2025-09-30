@@ -1246,11 +1246,11 @@ body, p, span{
     }
     .bubble-yellow {
       background: #fff;
-      box-shadow: 8px 10px 0 0 var(--secondary-color);
+      box-shadow: 8px 10px 0 0 var(--cadet-gray-color);
     }
     .bubble-green {
       background: #fff;
-      box-shadow: 8px 10px 0 0 var(--secondary-color);
+      box-shadow: 8px 10px 0 0 var(--cadet-gray-color);
     }
     .flag-yellow {
       position: absolute;
