@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Website</title>
+
+    <!-- BOOTSTRAP CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  
+    <!-- Bootstrap 5 CSS CDN (if not already included) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Include Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+    <!-- FONTAWESOME CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/brands.min.css">
+
+    <!-- STYLE SHEET LINK -->
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg sticky-top bg-light shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand me-3" href="#">
+                <img src="./asserts/logo.jpg" alt="" style="width: 180px; height:80px;">
+            </a>
+            <button class="navbar-toggler bg-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"
+                    style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' fill=\'none\' viewBox=\'0 0 30 30\'><path stroke=\'%23ffffff\' stroke-width=\'2\' stroke-linecap=\'round\' d=\'M4 7h22M4 15h22M4 23h22\'/></svg>');">
+                </span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item ps-3 pe-3 border-end">
+                        <a class="nav-link h5 text-primary-blue fw-bold" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item ps-3 pe-3 border-end">
+                        <a class="nav-link h5 text-primary-blue fw-bold" href="./about-us.html">About Us</a>
+                    </li>
+                    <li class="nav-item ps-3 pe-3 border-end">
+                        <a class="nav-link h5 text-primary-blue fw-bold" href="./product-pipeline.html">Products Pipeline</a>
+                    </li>
+                    <li class="nav-item ps-3 pe-3 border-end">
+                        <a class="nav-link h5 text-primary-blue fw-bold" href="./team.html">Team</a>
+                    </li>
+                    <li class="nav-item ps-3 pe-3 border-end">
+                        <a class="nav-link h5 text-primary-blue fw-bold" href="./careers.html">Careers</a>
+                    </li>
+                    <li class="nav-item ps-3 pe-3 border-end">
+                        <a class="nav-link h5 text-primary-blue fw-bold" href="./blogs-news.html">Blogs/News</a>
+                    </li>
+                    <li class="nav-item ps-3 pe-3">
+                        <a class="nav-link h5 text-primary-blue fw-bold" href="./contact-us.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- BANNER -->
+    <section id="intro" class="position-relative overflow-hidden">
+        <div class="banner">
+            <img src="./asserts/images/banners/contact-banner.jpg" alt="banner" class="img-fluid w-100" style="height: 400px; object-fit: cover;">
+            <div class="overlay position-absolute top-0 start-0 w-100 h-100 bg-primary" style="opacity: 0.7;"></div>
+
+            <div class="container">
+                <div class="banner-content position-absolute top-50 start-50 translate-middle text-white text-center">
+                    <h1 class="display-4 fw-bold">
+                        Contact Us
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-primary text-light pt-5">
+        <div class="container">
+            <div class="row">
+                <!-- Company Info -->
+                <div class="col-md-4 mb-4 text-center text-md-start">
+                    <h3 class="fw-bold">ABSNOVACELL</h3>
+                    <p class="mb-3 small text-light">
+                        © ABSNovacell Biopharmaceuticals Limited. Advancing compassionate innovation for a healthier tomorrow.
+                    </p>
+                    <div class="d-flex gap-3">
+                    <a href="#" class="text-light"><i class="bi bi-linkedin fs-4"></i></a>
+                    <a href="#" class="text-light"><i class="bi bi-facebook fs-4"></i></a>
+                    <a href="#" class="text-light"><i class="bi bi-twitter-x fs-4"></i></a>
+                    <a href="#" class="text-light"><i class="bi bi-instagram fs-4"></i></a>
+                    </div>
+                </div>
+                <!-- Quick Links -->
+                <div class="col-md-2 mb-4 text-center text-md-start">
+                    <h6 class="fw-bold">Quick Links</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="./about-us.html" class="text-light text-decoration-none">About Us</a></li>
+                        <li><a href="./product-pipeline.html" class="text-light text-decoration-none">Product Pipeline</a></li>
+                        <li><a href="./team.html" class="text-light text-decoration-none">Team</a></li>
+                        <li><a href="./careers.html" class="text-light text-decoration-none">Careers</a></li>
+                        <li><a href="./blogs-news.html" class="text-light text-decoration-none">Blogs/News</a></li>
+                    </ul>
+                </div>
+                <!-- USA Info -->
+                <div class="col-md-3 mb-4 text-center text-md-start">
+                    <h6 class="fw-bold">USA Contact Info</h6>
+                    <ul class="list-unstyled small">
+                            <li class="mb-2">
+                            <i class="bi bi-geo-alt-fill me-2"></i>80 Main Street, 5th Floor, West <br>
+                            &nbsp;&nbsp;&nbsp;Orange, NJ 07052, USA
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-envelope-fill me-2"></i>sheila@absnovacell.com
+                        </li>
+                        <li>
+                            <i class="bi bi-telephone-fill me-2"></i>484-544-2673
+                        </li>
+                    </ul>
+                </div>
+                <!-- India Info -->
+                <div class="col-md-3 mb-4 text-center text-md-start">
+                    <h6 class="fw-bold">India Contact Info</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2">
+                            <i class="bi bi-geo-alt-fill me-2"></i>B-502, Leela Nagar, Ameerpet <br>
+                            &nbsp;&nbsp;&nbsp;Hyderabad-16, AP, India
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-envelope-fill me-2"></i>sheila@absnovacell.com
+                        </li>
+                        <li>
+                            <i class="bi bi-telephone-fill me-2"></i>610-905-8609
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row border-top border-secondary p-3 mt-3">
+                <div class="col-md-6 text-start small">
+                    © 2018-2025 ABSNOVACELL®. All rights reserved.
+                </div>
+                <div class="col-md-6 text-end small">
+                    <a href="#" class="text-light text-decoration-none me-3">Privacy Policy</a>
+                    <a href="#" class="text-light text-decoration-none me-3">Terms of Use</a>
+                    <a href="#" class="text-light text-decoration-none">Site Map</a>
+                </div>
+            </div>
+        </div>
+        <div class="bg-light text-dark text-center py-2">
+            <span>Developed by</span>
+            <a href="https://pravishree.com/" class="fw-bold text-primary-blue text-decoration-none">Pravishree</a>
+        </div>
+    </footer>
+
+    <!-- BOOTSTRAP JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
