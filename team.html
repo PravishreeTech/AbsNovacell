@@ -7,6 +7,9 @@
 
     <!-- BOOTSTRAP CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    <!-- Bootstrap CSS (if not included already) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- FONTAWESOME CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/brands.min.css">
@@ -34,13 +37,13 @@
                         <a class="nav-link h5 text-primary-blue fw-bold" href="./index.html">Home</a>
                     </li>
                     <li class="nav-item ps-3 pe-3 border-end">
-                        <a class="nav-link h5 text-primary-blue fw-bold active" aria-current="page" href="./about-us.html">About Us</a>
+                        <a class="nav-link h5 text-primary-blue fw-bold" href="./about-us.html">About Us</a>
                     </li>
                     <li class="nav-item ps-3 pe-3 border-end">
                         <a class="nav-link h5 text-primary-blue fw-bold" href="./product-pipeline.html">Products Pipeline</a>
                     </li>
                     <li class="nav-item ps-3 pe-3 border-end">
-                        <a class="nav-link h5 text-primary-blue fw-bold" href="./team.html">Team</a>
+                        <a class="nav-link h5 text-primary-blue fw-bold active" aria-current="page" href="./team.html">Team</a>
                     </li>
                     <li class="nav-item ps-3 pe-3 border-end">
                         <a class="nav-link h5 text-primary-blue fw-bold" href="./careers.html">Careers</a>
@@ -59,67 +62,96 @@
     <!-- BANNER -->
     <section id="intro" class="position-relative overflow-hidden">
         <div class="banner">
-            <img src="./asserts/images/banners/about-banner.jpg" alt="banner" class="img-fluid w-100" style="height: 400px; object-fit: cover;">
-            <div class="overlay position-absolute top-0 start-0 w-100 h-100 bg-primary" style="opacity: 0.7;"></div>
+            <img src="https://media.istockphoto.com/id/1329476176/photo/happy-diverse-different-aged-business-team-discussing-work.jpg?s=612x612&w=0&k=20&c=A3T6P7EYWqn43RxeghrJRT9ppxLlLfalMNMML2o6pro=" alt="banner" class="img-fluid w-100" style="height: 400px; object-fit: cover;">
+            <div class="overlay position-absolute top-0 start-0 w-100 h-100 bg-primary" style="opacity: 0.6;"></div>
 
             <div class="container">
                 <div class="banner-content position-absolute top-50 start-50 translate-middle text-white text-center">
                     <h1 class="display-4 fw-bold">
-                        About Us
+                        Team
                     </h1>
                 </div>
             </div>
         </div>
     </section>
 
-    <br>
+    <!-- TEAM -->
+    <section class="py-5 padding-medium">
+        <div class="container text-center">
 
-    <!-- ABOUT US -->
-    <section id="about-us" class="padding-medium bg-primary py-5" style="background: linear-gradient(135deg, #1B365D 50%, #0C7BC0 100%);">
-        <div class="container">
-            <div class="row align-items-center">
-                
-                <div class="col-lg-4 mb-4 mb-lg-0">
-                    <img src="./asserts/images/pic1.png" 
-                        alt="Example Image" 
-                        class="img-fluid rounded w-100 border border-3 border-light p-2">
-                </div>
-                
-                <div class="col-lg-8">
-                    <div class="p-3">
-                        <p class="text-light">
-                            ABSNovacell Biopharmaceuticals Limited is a subsidiary of American Biosources Inc., NJ, USA, was originally established in
-                            year 2001, having R & D labs and developmental laboratories in USA. Technology transfer for commercialization to India.
-                        </p>
-                        <p class="text-light">
-                            The company was originally founded by two world renowned scientists and global BioPharma executives based on the strong
-                            foundation of research innovation, novelty, intellectual property generation. We have extensive
-                            USFDA/EMEA/MHRA expertise.
-                        </p>
-                        <p class="text-light">
-                            ABSNovacell Biopharmaceuticals Limited is a Biopharmaceutical & Biotechnology R&D, Process Development and Clinical stage company. We have commercial products in speciality Pharmaceuticals, Nutraceuticals and Diagnostics.
-                        </p>
-                        
-                        <p class="text-uppercase fw-bold text-light" style="text-decoration: underline; text-underline-offset: 4px;">
-                            Our Strategic Business Units :
-                        </p>
-                        
-                        <div class="d-flex flex-wrap gap-2">
-                            <button type="button" class="btn btn-light btn-lg btn-sm fw-semibold">Biologics</button>
-                            <button type="button" class="btn btn-light btn-lg btn-sm fw-semibold">Biosimilars</button>
-                            <button type="button" class="btn btn-light btn-lg btn-sm fw-semibold">Innovative Biotherapeutics</button>
-                            <button type="button" class="btn btn-light btn-lg btn-sm fw-semibold">Nutraceuticals</button>
-                            <button type="button" class="btn btn-light btn-lg btn-sm fw-semibold">Diagnostics</button>
-                            <button type="button" class="btn btn-light btn-lg btn-sm fw-semibold">Consulting Services</button>
+            <div id="teamCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
+                <div class="carousel-inner">
+                    <!-- Slide 1 -->
+                    <div class="carousel-item active">
+                        <div class="row justify-content-center">
+                            <div class="col-md-4">
+                                <div class="card p-3 mb-3">
+                                    <h5 class="fw-bold">Dr. Niranjan Kumar</h5>
+                                    <div class="text-primary text-uppercase small mb-2">Chairman & CEO</div>
+                                    <p>Visionary leader with over 20 years of experience in biotechnology and pharmaceutical development.</p>
+                                    <a href="./blogs.html" class="btn btn-primary rounded-pill">Read More</a>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card p-3 mb-3">
+                                    <h5 class="fw-bold">Kumar</h5>
+                                    <div class="text-primary text-uppercase small mb-2">Chairman & CEO</div>
+                                    <p>Visionary leader with over 20 years of experience in biotechnology and pharmaceutical development.</p>
+                                    <a href="./blogs.html" class="btn btn-primary rounded-pill">Read More</a>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card p-3 mb-3">
+                                    <h5 class="fw-bold">Niranjan </h5>
+                                    <div class="text-primary text-uppercase small mb-2">Chairman & CEO</div>
+                                    <p>Visionary leader with over 20 years of experience in biotechnology and pharmaceutical development.</p>
+                                    <a href="./blogs.html" class="btn btn-primary rounded-pill">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 1 -->
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-md-4">
+                                <div class="card p-3 mb-3">
+                                    <h5 class="fw-bold">Dr. </h5>
+                                    <div class="text-primary text-uppercase small mb-2">Chairman & CEO</div>
+                                    <p>Visionary leader with over 20 years of experience in biotechnology and pharmaceutical development.</p>
+                                    <a href="./blogs.html" class="btn btn-primary rounded-pill">Read More</a>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card p-3 mb-3">
+                                    <h5 class="fw-bold">Dr. Nir</h5>
+                                    <div class="text-primary text-uppercase small mb-2">Chairman & CEO</div>
+                                    <p>Visionary leader with over 20 years of experience in biotechnology and pharmaceutical development.</p>
+                                    <a href="./blogs.html" class="btn btn-primary rounded-pill">Read More</a>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card p-3 mb-3">
+                                    <h5 class="fw-bold">Djan Kumar</h5>
+                                    <div class="text-primary text-uppercase small mb-2">Chairman & CEO</div>
+                                    <p>Visionary leader with over 20 years of experience in biotechnology and pharmaceutical development.</p>
+                                    <a href="./blogs.html" class="btn btn-primary rounded-pill">Read More</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Carousel indicators -->
+                <div class="carousel-indicators mt-3">
+                    <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <br>
-    
     <!-- FOOTER -->
     <footer class="bg-primary text-light pt-5">
         <div class="container">
@@ -197,6 +229,10 @@
             <a href="https://pravishree.com/" class="fw-bold text-primary-blue text-decoration-none">Pravishree</a>
         </div>
     </footer>
+
+    
+    <!-- Bootstrap JS bundle (required for carousel functionality) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- BOOTSTRAP JS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

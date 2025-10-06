@@ -1,20 +1,3 @@
-/*
-Theme Name: Medicare
-Theme URI: 
-Author: 
-Author URI: 
-Description: Medicare is specially designed product packaged for Medical Healthcare by TemplatesJungle.
-Version: 
-*/
-
-/*--------------------------------------------------------------
-This is main CSS file that contains custom style rules used in this template
---------------------------------------------------------------*/
-
-/*------------------------------------*\
-    Table of contents
-\*------------------------------------*/
-
 /*------------------------------------------------
 
 CSS STRUCTURE:
@@ -61,6 +44,7 @@ CSS STRUCTURE:
 /*--------------------------------------------------------------
 /** 1. VARIABLES
 --------------------------------------------------------------*/
+
 :root {
     --primary-color-1: #B31942;
     --primary-color-2-hover: #0f4a93;
@@ -70,23 +54,23 @@ CSS STRUCTURE:
     --footer-bottom-color: #1E293B;
     --copyright-background: #fff;
 
-  --accent-color: #333;
-  --black-color: #000;
-  --dark-color: #4C5354;
-  --primary-color: #0A3161;
-  --secondary-color : #ea2c42;
-  --primary-color-200: #e8f1ec;
-  --primary-color-400: #e8f1ed;
-  --gray-color: #ccd7da;
-  --bs-gray-300: #DCDCDC;
-  --bs-light-rgb: rgba(255, 255, 255, 1);
-  --bs-primary-rgb: rgb(33, 63, 97);
-  --light-color: #fff;
-  --swiper-theme-color: #111 !important;
-  --cadet-blue-color: #4c83c2;
-  --cadet-gray-color: #bac2c4;
-
-  --gradient-color : linear-gradient(135deg, #1B365D 0%, #0C7BC0 100%);
+    --accent-color: #333;
+    --black-color: #000;
+    --dark-color: #4C5354;
+    --primary-color: #0A3161;
+    --secondary-color : #ea2c42;
+    --primary-color-200: #e8f1ec;
+    --primary-color-400: #e8f1ed;
+    --gray-color: #ccd7da;
+    --bs-gray-300: #DCDCDC;
+    --bs-light-rgb: rgba(255, 255, 255, 1);
+    --bs-primary-rgb: rgb(33, 63, 97);
+    --light-color: #fff;
+    --swiper-theme-color: #111 !important;
+    --cadet-blue-color: #4c83c2;
+    --cadet-gray-color: #bac2c4;
+    
+    --gradient-color : linear-gradient(135deg, #1B365D 0%, #0C7BC0 100%);
 }
 
 .gradient-text {
@@ -396,17 +380,6 @@ h5.light {
   border-radius: 2em;
 }
 
-/* button outline */
-/* .btn.btn-outline-dark,
-.btn.btn-outline-light,
-.btn.btn-outline-accent,
-.btn.btn-outline-primary {
-  background: transparent;
-  text-shadow: none;
-  box-shadow: none;
-  border: 2px solid transparent;
-} */
-
 .btn.btn-outline-dark:hover::after,
 .btn.btn-outline-light:hover::after {
   background-color: transparent;
@@ -436,17 +409,6 @@ h5.light {
 .btn.btn-outline-gray:hover {
   color: var(--light-color) !important;
 }
-
-/* .btn.btn-outline-primary {
-  background: transparent;
-  border-color: var(--primary-color);
-  color: var(--dark-color);
-} */
-
-/* .btn.btn-outline-primary:hover {
-  border-color: var(--dark-color);
-  color: var(--dark-color) !important;
-} */
 
 .btn.btn-full {
   display: block;
@@ -593,7 +555,7 @@ svg.primary-color {
 }
 
 svg.primary-color-500 {
-  color: var(--primary-color);
+  color: var(--copyright-background);
 }
 
 /* - Search Bar
@@ -1244,67 +1206,12 @@ body, p, span{
       padding: 34px 40px 32px 40px;
       background: #fff;
     }
-    .bubble-yellow {
+    .bubble-gray {
       background: #fff;
       box-shadow: 8px 10px 0 0 var(--cadet-gray-color);
-    }
-    .bubble-green {
-      background: #fff;
-      box-shadow: 8px 10px 0 0 var(--cadet-gray-color);
-    }
-    .flag-yellow {
-      position: absolute;
-      top: 20px;
-      right: 30px;
-      width: 22px;
-      height: 22px;
-      color: #fff ;
-    }
-    .flag-green {
-      position: absolute;
-      top: 20px;
-      right: 30px;
-      width: 22px;
-      height: 22px;
-      color: #fff;
-    }
-    .speech-bubble:after {
-      content: '';
-      position: absolute;
-      left: 36px;
-      bottom: -24px;
-      width: 36px;
-      height: 24px;
-      background: inherit;
-      clip-path: polygon(50% 100%, 0 0, 100% 0);
-      z-index: 1;
-      box-shadow: none;
-    }
-    .bubble-yellow:after {
-      background: linear-gradient(135deg, #1B365D 0%, #0C7BC0 100%);
-    }
-    .bubble-green:after {
-      background: linear-gradient(135deg, #1B365D 0%, #0C7BC0 100%);
-    }
-    .icon-circle {
-      width: 40px;
-      height: 40px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 32px;
-    }
-    .icon-yellow {
-      color: var(--light-color);
-    }
-    .icon-green {
-      color: var(--light-color);
     }
     .section-title {
       font-size: 2rem;
-      margin-left: 12px;
-      margin-bottom: 7px;
-      display: inline-block;
     }
     .section-desc {
       font-size: 0.97rem;
