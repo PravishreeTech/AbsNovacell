@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Therapeutic Products Table</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .custom-table {
+      background-color: #1B365D;
+      color: #ffffff;
+      border: none;
+      border-radius: 10px;
+      overflow: hidden;
+      width: 85%;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .custom-table th,
+    .custom-table td {
+      text-align: center;
+      vertical-align: middle;
+      padding: 15px;
+    }
+
+    .custom-table thead {
+      background-color: #162b4a;
+      color: #ffffff;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .custom-table tbody tr:hover {
+      background-color: #233d6d;
+      transition: 0.3s ease-in-out;
+    }
+
+    @media (max-width: 768px) {
+      .custom-table {
+        width: 100%;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container d-flex justify-content-center align-items-center">
+    <table class="table custom-table">
+      <thead>
+        <tr>
+          <th scope="col">Therapeutic Area</th>
+          <th scope="col">Product Candidate</th>
+          <th scope="col">Platform</th>
+          <th scope="col">Indication Development Phase</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Oncology</th>
+          <td>ABS-101</td>
+          <td>Monoclonal Antibody</td>
+          <td>Solid Tumors</td>
+        </tr>
+        <tr>
+          <th scope="row">Immunology</th>
+          <td>ABS-102</td>
+          <td>Biosimilar</td>
+          <td>Autoimmune Disorders</td>
+        </tr>
+        <tr>
+          <th scope="row">Rare Disease</th>
+          <td>ABS-GT01 AAV</td>
+          <td>Gene Therapy</td>
+          <td>Genetic Disorder</td>
+        </tr>
+        <tr>
+          <th scope="row">Biologics</th>
+          <td>ABS-Universal Viral Vaccine</td>
+          <td>Novacell Platform</td>
+          <td>Infectious Diseases</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

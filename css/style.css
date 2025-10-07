@@ -1221,3 +1221,28 @@ body, p, span{
         margin-bottom: 2rem;
       }
     }
+
+
+/* GLOBAL ALLIANCE */
+    .left-section-alliance {
+      background: linear-gradient(120deg, #1B365D 50%, #0C7BC0 100%);;
+      display: flex;
+      justify-content: center;
+      align-items: left;
+      text-align: left;
+      flex-direction: column;
+      clip-path: polygon(0 0, 100% 0, 60% 100%, 0% 100%);
+    }
+
+    .right-section-alliance {
+      padding: 50px 60px;
+    }
+
+    .highlight-box {
+      border-left: 4px solid var(--primary-color);
+      background-color: #f8f9fa;
+      border-radius: 5px;
+    }
+
+/* GENE THERAPY PARTNERSHIP */
+   
