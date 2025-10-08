@@ -1245,4 +1245,16 @@ body, p, span{
     }
 
 /* GENE THERAPY PARTNERSHIP */
-   
+    .right-section-therapy {
+      background: linear-gradient(120deg, #1B365D 50%, #0C7BC0 100%);;
+      display: flex;
+      justify-content: center;
+      align-items: right;
+      text-align: right;
+      flex-direction: column;
+      clip-path: polygon(0 0, 0% 0%, 100% 200%, 100% 0%);
+    }
+
+    .left-section-therapy {
+      padding: 50px 60px;
+    }
