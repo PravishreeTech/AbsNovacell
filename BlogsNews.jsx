@@ -308,7 +308,7 @@ const BlogsNews = () => {
                   info@absnovacell.com
                 </li>
                 <li>
-                  <i className="bi bi-telephone-fill me-2"></i>610-905-8609
+                  <i className="bi bi-telephone-fill me-2"></i>+1-484-544-2673
                 </li>
               </ul>
             </div>
@@ -324,10 +324,10 @@ const BlogsNews = () => {
                 </li>
                 <li className="mb-2">
                   <i className="bi bi-envelope-fill me-2"></i>
-                  sheila@absnovacell.com
+                  info@absnovacell.com
                 </li>
                 <li>
-                  <i className="bi bi-telephone-fill me-2"></i>484-544-2673
+                  <i className="bi bi-telephone-fill me-2"></i>+1-484-544-2673
                 </li>
               </ul>
             </div>
